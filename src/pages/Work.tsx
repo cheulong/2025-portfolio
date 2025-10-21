@@ -1,9 +1,14 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import alstomLogo from "@/assets/work/alstom-logo.jpg";
+import peaksLogo from "@/assets/work/7peaks-logo.jpeg";
+import lingLogo from "@/assets/work/ling.jpeg";
+import buzzwooLogo from "@/assets/work/buzzwoo.png";
 
 const Work = () => {
   const experiences = [
     {
+      logo: alstomLogo,
       company: "Alstom",
       role: "Frontend Developer",
       period: "Jan 2024 - Present",
@@ -18,6 +23,7 @@ const Work = () => {
       ],
     },
     {
+      logo: peaksLogo,
       company: "Seven Peaks Software",
       role: "Frontend Developer",
       period: "Feb 2022 - Dec 2023",
@@ -31,6 +37,7 @@ const Work = () => {
       ],
     },
     {
+      logo: lingLogo,
       company: "Ling",
       role: "FullStack Developer",
       period: "Aug 2019 - Jan 2022",
@@ -43,6 +50,7 @@ const Work = () => {
       ],
     },
     {
+      logo: buzzwooLogo,
       company: "Buzzwoo Asia co. ltd.",
       role: "Frontend Developer Intern",
       period: "Sep 2018 - May 2019",
@@ -60,8 +68,9 @@ const Work = () => {
         <div className="mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">my work</h1>
           <p className="text-muted-foreground text-lg">
-            On a mission to build products developers love, and along the way, teach the next generation of
-            developers. Here's a summary of my work so far.
+            On a mission to build products developers love, and along the way,
+            teach the next generation of developers. Here's a summary of my work
+            so far.
           </p>
         </div>
 
@@ -74,8 +83,19 @@ const Work = () => {
             >
               <div className="space-y-4">
                 <div>
-                  <h2 className="text-2xl font-bold text-foreground">{exp.company}</h2>
-                  <p className="text-muted-foreground">{exp.role}</p>
+                  <div className="flex gap-3">
+                    <img
+                      src={exp.logo}
+                      alt={`${exp.company} logo`}
+                      className="w-16 h-16 object-contain mb-4 rounded-2xl shadow-card border border-border"
+                    />
+                    <div>
+                      <h2 className="text-2xl font-bold text-foreground">
+                        {exp.company}
+                      </h2>
+                      <p className="text-muted-foreground">{exp.role}</p>
+                    </div>
+                  </div>
                   <p className="text-sm text-muted-foreground">{exp.period}</p>
                 </div>
 
@@ -83,7 +103,10 @@ const Work = () => {
 
                 <ul className="space-y-2 ml-4">
                   {exp.achievements.map((achievement, i) => (
-                    <li key={i} className="text-muted-foreground list-disc leading-relaxed">
+                    <li
+                      key={i}
+                      className="text-muted-foreground list-disc leading-relaxed"
+                    >
                       {achievement}
                     </li>
                   ))}

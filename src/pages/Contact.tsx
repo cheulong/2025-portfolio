@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github, Youtube, Monitor } from "lucide-react";
+import { Mail, Linkedin, Github, Youtube, NotebookPen } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const Contact = () => {
@@ -6,32 +6,32 @@ const Contact = () => {
     {
       icon: Mail,
       label: "email",
-      href: "mailto:your.email@example.com",
-      display: "your.email@example.com",
+      href: "mailto:searcheulong@gmail.com",
+      display: "searcheulong@gmail.com",
     },
     {
       icon: Linkedin,
       label: "linkedin",
-      href: "https://linkedin.com",
-      display: "linkedin.com/in/yourprofile",
+      href: "https://www.linkedin.com/in/cheulongsear/",
+      display: "linkedin.com/in/cheulongsear",
     },
     {
       icon: Github,
       label: "github",
-      href: "https://github.com",
-      display: "github.com/yourprofile",
+      href: "https://github.com/cheulong",
+      display: "github.com/cheulong",
     },
     {
-      icon: Monitor,
+      icon: NotebookPen,
       label: "dev.to",
-      href: "https://dev.to",
-      display: "dev.to/yourprofile",
+      href: "https://dev.to/cheulong",
+      display: "dev.to/cheulong",
     },
     {
       icon: Youtube,
       label: "youtube",
-      href: "https://youtube.com",
-      display: "youtube.com/@yourchannel",
+      href: "https://youtube.com/@moshi-moshi-devops",
+      display: "youtube.com/@moshi-moshi-devops",
     },
   ];
 
