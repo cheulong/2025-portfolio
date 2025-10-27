@@ -46,7 +46,8 @@ const Projects = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
+          <h1>Coming Soon</h1>
+          {/* {projects.map((project, index) => (
             <Card
               key={index}
               className="bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-card animate-fade-in flex flex-col group overflow-hidden"
@@ -142,7 +143,7 @@ const Projects = () => {
                 </div>
               )}
             </Card>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>

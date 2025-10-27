@@ -52,7 +52,11 @@ const Home = () => {
                   <img
                     src={az104}
                     alt="Cheulong Sear"
-                    className="relative rounded-2xl shadow-card w-full"
+                    className="relative rounded-2xl shadow-card w-full cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.open("https://learn.microsoft.com/api/credentials/share/en-us/CheulongSear-6430/4A51F64A923BE19?sharingId", "_blank");
+                    }}
                   />
                 </div>
                 {/* <div className="relative w-2/12 max-w-xs">
@@ -85,7 +89,7 @@ const Home = () => {
             <div className="mt-8 flex flex-wrap gap-4">
               <Button
                 asChild
-                className="bg-gradient-primary hover:shadow-glow transition-all"
+                className="text-white bg-blue-500 hover:shadow-glow transition-all"
               >
                 <Link to="/work">
                   View My Work <ArrowRight className="ml-2" size={18} />
