@@ -1,9 +1,10 @@
-import { Linkedin, Github, NotebookPen } from "lucide-react";
+import { Linkedin, Github, NotebookPen, Youtube } from "lucide-react";
 
 const SocialLinks = () => {
   const socials = [
     { icon: Linkedin, href: "https://www.linkedin.com/in/cheulongsear/", label: "LinkedIn" },
-    { icon: NotebookPen, href: "https://youtube.com/@moshi-moshi-devops", label: "dev.to" },
+    { icon: Youtube, href: "https://youtube.com/@moshi-moshi-devops", label: "youtube" },
+    { icon: NotebookPen, href: "https://dev.to/cheulong", label: "dev.to" },
     { icon: Github, href: "https://github.com/cheulong", label: "GitHub" },
   ];
 
