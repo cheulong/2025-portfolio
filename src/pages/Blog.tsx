@@ -21,6 +21,7 @@ import awsTfImg from "@/assets/blogs/aws-tf-port.png";
 import azureTfImg from "@/assets/blogs/azuretf-port.png";
 import proxmoxEmuImg from "@/assets/blogs/proxmoxEmu-port.png";
 import proxMoxIpImg from "@/assets/blogs/proxmoxIp-port.png";
+import certManagerImg from "@/assets/blogs/cert-manager-port.png";
 
 const Blog = () => {
   const [selectedTag, setSelectedTag] = useState("all");
@@ -31,40 +32,59 @@ const Blog = () => {
   const getTagColor = (tag: string) => {
     const colorMap: Record<string, string> = {
       // DevOps tools
-      argocd: "bg-orange-500/20 text-orange-700 dark:text-orange-300 border-orange-500/30",
-      terraform: "bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-500/30",
+      argocd: "bg-rose-600/20 text-rose-700 dark:text-rose-300 border-rose-600/30",
+      terraform: "bg-purple-600/20 text-purple-700 dark:text-purple-300 border-purple-600/30",
       kubernetes: "bg-blue-600/20 text-blue-700 dark:text-blue-300 border-blue-600/30",
       docker: "bg-blue-400/20 text-blue-600 dark:text-blue-300 border-blue-400/30",
       
       // CI/CD
-      gitlab: "bg-orange-600/20 text-orange-700 dark:text-orange-300 border-orange-600/30",
-      cicd: "bg-purple-500/20 text-purple-700 dark:text-purple-300 border-purple-500/30",
-      gitops: "bg-orange-400/20 text-orange-600 dark:text-orange-300 border-orange-400/30",
+      gitlab: "bg-orange-700/20 text-orange-800 dark:text-orange-300 border-orange-700/30",
+      cicd: "bg-violet-600/20 text-violet-700 dark:text-violet-300 border-violet-600/30",
+      gitops: "bg-red-700/20 text-red-800 dark:text-red-300 border-red-700/30",
       
       // Monitoring
-      prometheus: "bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30",
-      grafana: "bg-orange-500/20 text-orange-700 dark:text-orange-300 border-orange-500/30",
-      loki: "bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 border-yellow-500/30",
+      prometheus: "bg-red-600/20 text-red-700 dark:text-red-300 border-red-600/30",
+      grafana: "bg-orange-600/20 text-orange-700 dark:text-orange-300 border-orange-600/30",
+      loki: "bg-lime-600/20 text-lime-700 dark:text-lime-300 border-lime-600/30",
       
       // Infrastructure
-      metallb: "bg-cyan-500/20 text-cyan-700 dark:text-cyan-300 border-cyan-500/30",
-      homelab: "bg-green-500/20 text-green-700 dark:text-green-300 border-green-500/30",
+      metallb: "bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-500/30",
+      homelab: "bg-green-600/20 text-green-700 dark:text-green-300 border-green-600/30",
       
       // Security & Network
-      security: "bg-red-600/20 text-red-700 dark:text-red-300 border-red-600/30",
-      firewall: "bg-red-500/20 text-red-700 dark:text-red-300 border-red-500/30",
-      network: "bg-cyan-600/20 text-cyan-700 dark:text-cyan-300 border-cyan-600/30",
+      security: "bg-orange-700/20 text-orange-800 dark:text-orange-300 border-orange-700/30",
+      firewall: "bg-red-700/20 text-red-800 dark:text-red-300 border-red-700/30",
+      network: "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
       
       // OS & General
       linux: "bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 border-yellow-600/30",
-      devops: "bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 border-indigo-500/30",
-      deployment: "bg-purple-600/20 text-purple-700 dark:text-purple-300 border-purple-600/30",
+      devops: "bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 border-indigo-600/30",
+      deployment: "bg-blue-600/20 text-blue-700 dark:text-blue-300 border-blue-600/30",
+      cloudflare: "bg-orange-600/20 text-orange-700 dark:text-orange-300 border-orange-600/30",
+      'cert-manager': "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
+      ingress: "bg-teal-600/20 text-teal-700 dark:text-teal-300 border-teal-600/30",
+      container: "bg-cyan-600/20 text-cyan-700 dark:text-cyan-300 border-cyan-600/30",
+      ubuntu: "bg-orange-700/20 text-orange-800 dark:text-orange-300 border-orange-700/30",
+      iac: "bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-500/30",
+      cloud: "bg-sky-500/20 text-sky-700 dark:text-sky-300 border-sky-500/30",
+      aws: "bg-orange-500/20 text-orange-700 dark:text-orange-300 border-orange-500/30",
+      azure: "bg-blue-700/20 text-blue-800 dark:text-blue-300 border-blue-700/30",
+      proxmox: "bg-purple-700/20 text-purple-800 dark:text-purple-300 border-purple-700/30",
+      vm: "bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 border-indigo-600/30",
     };
     
     return colorMap[tag.toLowerCase()] || "bg-gray-500/20 text-gray-700 dark:text-gray-300 border-gray-500/30";
   };
 
   const blogPosts = [
+    {
+      title: "Setup cert-manager in local K8s cluster using nginx-ingress & Cloudflare DNS",
+      description:
+        "This article will show you how to setup cert-manager in local k8s cluster using nginx-ingress and Cloudflare DNS to issue TLS certificate.",
+      tags: ["kubernetes", "cloudflare", "linux", "cert-manager", "ingress"],
+      image: certManagerImg,
+      link: "https://dev.to/cheulong/setup-cert-manager-in-local-k8s-cluster-using-nginx-ingress-cloudflare-dns-a9c",
+    },
     {
       title: "Expose the Kubernetes Load Balancer on Bare Metal using MetalLB",
       description:
@@ -238,11 +258,7 @@ const Blog = () => {
                       variant="secondary"
                       className={`text-xs cursor-pointer transition-all hover:scale-105 ${getTagColor(
                         tag
-                      )} ${
-                        selectedTag === tag
-                          ? "ring-2 ring-offset-2 ring-offset-background"
-                          : ""
-                      }`}
+                      )}`}
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedTag(tag);

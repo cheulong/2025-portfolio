@@ -10,31 +10,57 @@ const Projects = () => {
   const projects = [
     {
       id: "deploying-3tier-aks",
-      title: "Deploying a 3-Tier Web App on AKS with GitOps (ArgoCD + Helm)",
+      title: "Deploying the movies finder Web App on EKS with GitOps (ArgoCD + Helm)",
+      description:
+        "Movies finder Automate deployment of a web application using CI/CD and Kubernetes GitOps workflow.",
+      thumbnail: aksGitopsThumb,
+      tags: ["argocd", "kubernetes", "terraform", "monitoring"],
+      // details: {
+      //   architecture:
+      //     "The pipeline includes a GitHub Actions workflow that builds Docker images, pushes them to Docker Hub, and triggers an ArgoCD sync to deploy the latest version on AKS.",
+      //   tools: ["Docker", "Kubernetes", "ArgoCD", "Terraform", "Prometheus", "Grafana", "GitHub Actions"],
+      //   steps: ["Created app images", "Wrote Helm charts", "Set up ArgoCD pipeline"],
+      //   challenges:
+      //     "I initially faced an issue where ArgoCD couldn't sync due to missing CRDs. The fix was to use the argocd.argoproj.io/sync-wave annotation in Helm hooks.",
+      //   results: "GitHub repo + screenshots of ArgoCD sync & Grafana dashboards",
+      //   learning:
+      //     "This project taught me how GitOps simplifies deployments. Next, I plan to add Terraform to manage cluster infrastructure and integrate Prometheus for observability.",
+      // },
+    },
+        {
+      id: "deploying-3tier-aks",
+      title: "Project management aws with terraform",
       description:
         "Automate deployment of a web application using CI/CD and Kubernetes GitOps workflow.",
       thumbnail: aksGitopsThumb,
-      details: {
-        architecture:
-          "The pipeline includes a GitHub Actions workflow that builds Docker images, pushes them to Docker Hub, and triggers an ArgoCD sync to deploy the latest version on AKS.",
-        tools: ["Docker", "Kubernetes", "ArgoCD", "Terraform", "Prometheus", "Grafana", "GitHub Actions"],
-        steps: ["Created app images", "Wrote Helm charts", "Set up ArgoCD pipeline"],
-        challenges:
-          "I initially faced an issue where ArgoCD couldn't sync due to missing CRDs. The fix was to use the argocd.argoproj.io/sync-wave annotation in Helm hooks.",
-        results: "GitHub repo + screenshots of ArgoCD sync & Grafana dashboards",
-        learning:
-          "This project taught me how GitOps simplifies deployments. Next, I plan to add Terraform to manage cluster infrastructure and integrate Prometheus for observability.",
-      },
       tags: ["argocd", "kubernetes", "terraform", "monitoring"],
     },
     {
       id: "playwright-testing",
-      title: "What is Playwright?",
+      title: "deploy 3 tier ecommerce app on eks with gitops",
       description:
         "Playwright is a Node.js library made for browser automation. It is free, open-source and supported by Microsoft. Some of the team members used to work for google at the different automation tool called Puppeteer.",
       thumbnail: playwrightThumb,
       tags: ["test", "e2e"],
-      githubUrl: "https://github.com",
+      // githubUrl: "https://github.com",
+    },
+    {
+      id: "playwright-testing",
+      title: "inventory management aws with terraform",
+      description:
+        "Playwright is a Node.js library made for browser automation. It is free, open-source and supported by Microsoft. Some of the team members used to work for google at the different automation tool called Puppeteer.",
+      thumbnail: playwrightThumb,
+      tags: ["test", "e2e"],
+      // githubUrl: "https://github.com",
+    },
+    {
+      id: "playwright-testing",
+      title: "real estate 3 tier app on eks with gitops",
+      description:
+        "Playwright is a Node.js library made for browser automation. It is free, open-source and supported by Microsoft. Some of the team members used to work for google at the different automation tool called Puppeteer.",
+      thumbnail: playwrightThumb,
+      tags: ["test", "e2e"],
+      // githubUrl: "https://github.com",
     },
   ];
 
@@ -46,8 +72,8 @@ const Projects = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <h1>Coming Soon</h1>
-          {/* {projects.map((project, index) => (
+          {/* <h1>Coming Soon</h1> */}
+          {projects.map((project, index) => (
             <Card
               key={index}
               className="bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-card animate-fade-in flex flex-col group overflow-hidden"
@@ -143,7 +169,7 @@ const Projects = () => {
                 </div>
               )}
             </Card>
-          ))} */}
+          ))}
         </div>
       </div>
     </div>
