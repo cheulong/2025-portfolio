@@ -5,16 +5,17 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import aksGitopsThumb from "@/assets/projects/aks-gitops-thumb.jpg";
 import playwrightThumb from "@/assets/projects/playwright-thumb.jpg";
+import moviesFinder from "@/assets/projects/movie-finder-poster.png";
 
 const Projects = () => {
   const projects = [
     {
-      id: "deploying-3tier-aks",
+      id: "deploying-movies-finder-eks-gitops",
       title: "Deploying the movies finder Web App on EKS with GitOps (ArgoCD + Helm)",
       description:
-        "Movies finder Automate deployment of a web application using CI/CD and Kubernetes GitOps workflow.",
-      thumbnail: aksGitopsThumb,
-      tags: ["argocd", "kubernetes", "terraform", "monitoring"],
+        "Movies finder is a web application that allows users to search for movies and view details about them. The app is built using React.js, with data sourced from the TMDB API. The deployment is automated using a GitOps approach with ArgoCD and Helm on an Amazon EKS cluster.",
+      thumbnail: moviesFinder,
+      tags: ["argocd", "kubernetes", "terraform", "aws", "monitoring"],
       // details: {
       //   architecture:
       //     "The pipeline includes a GitHub Actions workflow that builds Docker images, pushes them to Docker Hub, and triggers an ArgoCD sync to deploy the latest version on AKS.",
@@ -72,8 +73,8 @@ const Projects = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {/* <h1>Coming Soon</h1> */}
-          {projects.map((project, index) => (
+          <h1>Coming Soon</h1>
+          {/* {projects.map((project, index) => (
             <Card
               key={index}
               className="bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-card animate-fade-in flex flex-col group overflow-hidden"
@@ -169,7 +170,7 @@ const Projects = () => {
                 </div>
               )}
             </Card>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
