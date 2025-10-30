@@ -22,6 +22,7 @@ import azureTfImg from "@/assets/blogs/azuretf-port.png";
 import proxmoxEmuImg from "@/assets/blogs/proxmoxEmu-port.png";
 import proxMoxIpImg from "@/assets/blogs/proxmoxIp-port.png";
 import certManagerImg from "@/assets/blogs/cert-manager-port.png";
+import slackImg from "@/assets/blogs/slack-port.png";
 
 const Blog = () => {
   const [selectedTag, setSelectedTag] = useState("all");
@@ -71,12 +72,22 @@ const Blog = () => {
       azure: "bg-blue-700/20 text-blue-800 dark:text-blue-300 border-blue-700/30",
       proxmox: "bg-purple-700/20 text-purple-800 dark:text-purple-300 border-purple-700/30",
       vm: "bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 border-indigo-600/30",
+      slack: "bg-violet-600/20 text-violet-700 dark:text-violet-300 border-violet-600/30",
+      automation: "bg-emerald-600/20 text-emerald-700 dark:text-emerald-300 border-emerald-600/30",
     };
     
     return colorMap[tag.toLowerCase()] || "bg-gray-500/20 text-gray-700 dark:text-gray-300 border-gray-500/30";
   };
 
   const blogPosts = [
+    {
+      title: "How to set up Slack notifications from GitLab CI/CD using the Slack API",
+      description:
+        "This article will show you how to set up Slack notifications from GitLab CI/CD using the Slack API. By following these steps, you can easily integrate Slack notifications into your GitLab CI/CD pipelines to keep your team informed about build and deployment statuses.",
+      tags: ["gitlab", "cicd", "slack", "automation"],
+      image: slackImg,
+      link: "https://dev.to/cheulong/how-to-set-up-slack-notifications-from-gitlab-cicd-using-the-slack-api-h5f",
+    },
     {
       title: "Setup cert-manager in local K8s cluster using nginx-ingress & Cloudflare DNS",
       description:
