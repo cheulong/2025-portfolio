@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import moviesFinder from "@/assets/projects/movies-finder.gif";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -10,8 +11,9 @@ const ProjectDetail = () => {
   // Project data - in a real app, this would come from an API or database
   const projects = [
     {
-      id: "deploying-3tier-aks",
-      title: "Deploying a 3-Tier Web App on AKS with GitOps (ArgoCD + Helm)",
+      id: "deploying-movies-finder-eks-gitops",
+      title: "Deploying the Movies Finder Web App on AKS with GitOps (ArgoCD + Helm)",
+      thumbnail: moviesFinder,
       description:
         "Automate deployment of a web application using CI/CD and Kubernetes GitOps workflow.",
       fullDescription:
@@ -19,7 +21,16 @@ const ProjectDetail = () => {
       details: {
         architecture:
           "The pipeline includes a GitHub Actions workflow that builds Docker images, pushes them to Docker Hub, and triggers an ArgoCD sync to deploy the latest version on AKS. The architecture follows a 3-tier model with frontend, backend API, and database layers, all orchestrated through Kubernetes.",
-        tools: ["Docker", "Kubernetes", "ArgoCD", "Terraform", "Prometheus", "Grafana", "GitHub Actions", "Helm"],
+        tools: [
+          "Docker",
+          "Kubernetes",
+          "ArgoCD",
+          "Terraform",
+          "Prometheus",
+          "Grafana",
+          "GitHub Actions",
+          "Helm",
+        ],
         steps: [
           "Created Docker images for each tier of the application",
           "Wrote comprehensive Helm charts with environment-specific values",
@@ -34,7 +45,15 @@ const ProjectDetail = () => {
         learning:
           "This project taught me how GitOps simplifies deployments and ensures consistency across environments. Next, I plan to add Terraform to manage cluster infrastructure and integrate Prometheus for observability. I also gained deep understanding of Kubernetes networking and service mesh concepts.",
       },
-      tags: ["argocd", "kubernetes", "terraform", "monitoring", "gitops", "helm"],
+      tags: [
+        "argocd",
+        "kubernetes",
+        "terraform",
+        "aws",
+        "monitoring",
+        "gitops",
+        "helm",
+      ],
       githubUrl: "https://github.com",
       liveUrl: "https://example.com",
     },
@@ -75,7 +94,11 @@ const ProjectDetail = () => {
       <div className="min-h-screen pt-20">
         <div className="container mx-auto px-6 py-12 max-w-4xl text-center">
           <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
-          <Button asChild variant="outline" className="border-primary text-primary">
+          <Button
+            asChild
+            variant="outline"
+            className="border-primary text-primary"
+          >
             <Link to="/projects">
               <ArrowLeft className="mr-2" size={18} />
               Back to Projects
@@ -88,7 +111,7 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen pt-20">
-      <div className="container mx-auto px-6 py-12 max-w-4xl">
+      <div className="container mx-auto px-6 py-12 max-w-6xl">
         <Button
           asChild
           variant="ghost"
@@ -102,8 +125,12 @@ const ProjectDetail = () => {
 
         <div className="space-y-8">
           <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{project.title}</h1>
-            <p className="text-xl text-muted-foreground mb-6">{project.description}</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              {project.title}
+            </h1>
+            <p className="text-xl text-muted-foreground mb-6">
+              {project.description}
+            </p>
             <div className="flex flex-wrap gap-2 mb-6">
               {project.tags.map((tag) => (
                 <Badge
@@ -119,9 +146,13 @@ const ProjectDetail = () => {
               {project.githubUrl && (
                 <Button
                   asChild
-                  className="bg-gradient-primary hover:shadow-glow transition-all"
+                  className="text-white bg-blue-500  hover:shadow-glow transition-all"
                 >
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Github className="mr-2" size={18} />
                     View on GitHub
                   </a>
@@ -133,7 +164,11 @@ const ProjectDetail = () => {
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                 >
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <ExternalLink className="mr-2" size={18} />
                     Live Demo
                   </a>
@@ -142,20 +177,44 @@ const ProjectDetail = () => {
             </div>
           </div>
 
-          <Card className="p-8 bg-card border-border animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <div className="relative animate-fade-in self-start">
+            <div className="relative w-full max-w-xl mx-auto">
+              <div className="absolute inset-0 bg-gradient-primary rounded-2xl blur-3xl opacity-30 animate-glow" />
+              <img
+                src={project.thumbnail}
+                alt="Cheulong Sear"
+                className="relative rounded-2xl shadow-card border border-border w-full"
+              />
+            </div>
+          </div>
+
+          <Card
+            className="p-8 bg-card border-border animate-fade-in"
+            style={{ animationDelay: "0.1s" }}
+          >
             <h2 className="text-2xl font-bold mb-4">Overview</h2>
-            <p className="text-muted-foreground leading-relaxed">{project.fullDescription}</p>
+            <p className="text-muted-foreground leading-relaxed">
+              {project.fullDescription}
+            </p>
           </Card>
 
           {project.details.architecture && (
-            <Card className="p-8 bg-card border-border animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <Card
+              className="p-8 bg-card border-border animate-fade-in"
+              style={{ animationDelay: "0.2s" }}
+            >
               <h2 className="text-2xl font-bold mb-4">Architecture Overview</h2>
-              <p className="text-muted-foreground leading-relaxed">{project.details.architecture}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {project.details.architecture}
+              </p>
             </Card>
           )}
 
           {project.details.tools && (
-            <Card className="p-8 bg-card border-border animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <Card
+              className="p-8 bg-card border-border animate-fade-in"
+              style={{ animationDelay: "0.3s" }}
+            >
               <h2 className="text-2xl font-bold mb-4">Technologies Used</h2>
               <div className="flex flex-wrap gap-3">
                 {project.details.tools.map((tool) => (
@@ -171,7 +230,10 @@ const ProjectDetail = () => {
           )}
 
           {project.details.steps && (
-            <Card className="p-8 bg-card border-border animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <Card
+              className="p-8 bg-card border-border animate-fade-in"
+              style={{ animationDelay: "0.4s" }}
+            >
               <h2 className="text-2xl font-bold mb-4">Implementation Steps</h2>
               <ol className="space-y-3">
                 {project.details.steps.map((step, index) => (
@@ -187,23 +249,40 @@ const ProjectDetail = () => {
           )}
 
           {project.details.challenges && (
-            <Card className="p-8 bg-card border-border animate-fade-in" style={{ animationDelay: "0.5s" }}>
-              <h2 className="text-2xl font-bold mb-4">Challenges & Solutions</h2>
-              <p className="text-muted-foreground leading-relaxed">{project.details.challenges}</p>
+            <Card
+              className="p-8 bg-card border-border animate-fade-in"
+              style={{ animationDelay: "0.5s" }}
+            >
+              <h2 className="text-2xl font-bold mb-4">
+                Challenges & Solutions
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                {project.details.challenges}
+              </p>
             </Card>
           )}
 
           {project.details.results && (
-            <Card className="p-8 bg-card border-border animate-fade-in" style={{ animationDelay: "0.6s" }}>
+            <Card
+              className="p-8 bg-card border-border animate-fade-in"
+              style={{ animationDelay: "0.6s" }}
+            >
               <h2 className="text-2xl font-bold mb-4">Results & Impact</h2>
-              <p className="text-muted-foreground leading-relaxed">{project.details.results}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {project.details.results}
+              </p>
             </Card>
           )}
 
           {project.details.learning && (
-            <Card className="p-8 bg-card border-border animate-fade-in" style={{ animationDelay: "0.7s" }}>
+            <Card
+              className="p-8 bg-card border-border animate-fade-in"
+              style={{ animationDelay: "0.7s" }}
+            >
               <h2 className="text-2xl font-bold mb-4">Key Learnings</h2>
-              <p className="text-muted-foreground leading-relaxed">{project.details.learning}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {project.details.learning}
+              </p>
             </Card>
           )}
         </div>
