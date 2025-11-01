@@ -58,7 +58,7 @@ const Resume = () => {
                 href="https://linkedin.com/in/cheulongsear"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center gap-2 text-primary transition-colors"
               >
                 <Linkedin size={16} />
                 linkedin.com/in/cheulongsear
@@ -67,16 +67,16 @@ const Resume = () => {
                 href="https://github.com/cheulong"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center gap-2 text-primary transition-colors"
               >
                 <Github size={16} />
                 github.com/cheulong
               </a>
               <a
-                href="https://github.com/cheulong"
+                href="https://cheulongsear.dev"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                className="flex items-center gap-2 text-primary transition-colors"
               >
                 <Globe size={16} />
                 cheulongsear.dev
@@ -111,17 +111,20 @@ const Resume = () => {
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground indent-8">
-              Results-driven Software Engineer transitioning into DevOps
-              Engineering, with hands-on experience in{" "}
+              DevOps-focused Software Engineer with 5+ years of experience in
+              automation, , and modern DevOps&nbsp;
               <span className="font-bold text-gray-300">
-                CI/CD pipelines, containerization, and cloud infrastructure
+                CI/CD, and cloud infrastructure across AWS and Azure
               </span>
-              . Strong foundation in software development and automation using{" "}
+              . Skilled in designing and deploying scalable systems using&nbsp;
               <span className="font-bold text-gray-300">
-                Docker, Kubernetes, and Terraform
+                Docker, Kubernetes, Terraform
               </span>
-              . Adept at bridging development and operations to deliver
-              scalable, reliable, and secure systems.
+              , and modern&nbsp;
+              <span className="font-bold text-gray-300">DevOps</span>
+              &nbsp;practices. Passionate about bridging development and
+              operations to enhance reliability, security, and developer
+              productivity.
             </p>
           </CardContent>
         </Card>
@@ -144,7 +147,7 @@ const Resume = () => {
                   Containers & Orchestration
                 </h4>
                 <p className="text-muted-foreground">
-                  Docker, Kubernetes, Helm, ArgoCD
+                  Docker, Kubernetes, Helm, ArgoCD, EKS
                 </p>
               </div>
               <div>
@@ -158,23 +161,17 @@ const Resume = () => {
                 <p className="text-muted-foreground">Terraform, Ansible</p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Monitoring & Logging</h4>
+                <h4 className="font-semibold mb-2">
+                  Monitoring & Observability
+                </h4>
                 <p className="text-muted-foreground">
                   Prometheus, Grafana, Loki, Opentelemetry
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">
-                  Containerization & Orchestration
-                </h4>
-                <p className="text-muted-foreground">
-                  Docker, Kubernetes, Azure Kubernetes Service(AKS)
-                </p>
-              </div>
-              <div>
                 <h4 className="font-semibold mb-2">Programming & Scripting</h4>
                 <p className="text-muted-foreground">
-                  JavaScript, Node.js, Bash
+                  Node.js, JavaScript, Bash
                 </p>
               </div>
               <div>
@@ -268,24 +265,25 @@ const Resume = () => {
               </p>
               <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                 <li>
-                  Upgraded Electron framework (v5 → v31) to modernize the
-                  development stack and enable ESM syntax
+                  Modernized Electron build pipeline using <span className="font-bold text-gray-300">Azure DevOps</span>,
+                  enabling automated versioning and Windows code-signing.
                 </li>
                 <li>
-                  Enhanced Azure DevOps pipelines to integrate the latest
-                  Electron builder
+                  Integrated <span className="font-bold text-gray-300">Playwright</span> end-to-end tests into CI/CD, reducing
+                  manual QA time by <span className="font-bold text-gray-300">40%</span> and increasing release reliability.
                 </li>
                 <li>
-                  Implemented end-to-end testing automation using Playwright
-                  within Electron
+                  Upgraded Electron framework (v5 → v31) to improve security,
+                  performance, and deployment speed.
                 </li>
                 <li>
-                  Collaborated with cross-functional teams to maintain CI/CD
-                  health and ensure consistent release quality
+                  Managed vulnerability scanning and dependency remediation
+                  using <span className="font-bold text-gray-300">Blackduck</span>, maintaining compliance with corporate
+                  standards.
                 </li>
                 <li>
-                  Using Blackduck tools to scan vulnerabilities and outdated
-                  third-party libraries
+                  Collaborated with infrastructure teams to optimize CI/CD
+                  pipelines and enhance build consistency.
                 </li>
               </ul>
             </div>
@@ -310,14 +308,22 @@ const Resume = () => {
               </p>
               <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                 <li>
-                  Implemented Infrastructure as Code (IaC) using Terraform to
-                  provision and manage Azure resources
+                  Implemented <span className="font-bold text-gray-300">Infrastructure as Code (IaC)</span> using <span className="font-bold text-gray-300">Terraform</span> to
+                  automate provisioning of Azure App Services, VNets, and Key
+                  Vaults.
                 </li>
                 <li>
-                  Designed and deployed scalable cloud architectures on Azure
+                  Built and maintained <span className="font-bold text-gray-300">Azure DevOps pipelines</span>, reducing
+                  deployment time by <span className="font-bold text-gray-300">60%</span> and improving delivery confidence.
                 </li>
                 <li>
-                  Automated CI/CD workflows for containerized applications
+                  Supported <span className="font-bold text-gray-300">DevOps practices</span> in building a secure, scalable
+                  hospital website using Azure services, helping increase
+                  telemedicine adoption by 30%.
+                </li>
+                <li>
+                  Integrated <span className="font-bold text-gray-300">Azure Communication Services</span> and <span className="font-bold text-gray-300">SignalR</span> for
+                  real-time communication, improving reliability under load.
                 </li>
               </ul>
             </div>
@@ -338,15 +344,14 @@ const Resume = () => {
               </p>
               <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                 <li>
-                  Maintained backend infrastructure with Firebase Cloud
-                  Functions
+                  Automated deployment of <span className="font-bold text-gray-300">Firebase Cloud Functions</span> via CI/CD
+                  workflows, cutting manual release time by 50%.Automated
+                  deployment of <span className="font-bold text-gray-300">Firebase Cloud Functions</span> via CI/CD workflows,
+                  cutting manual release time by 50%.
                 </li>
                 <li>
-                  Integrated third-party services including authentication,
-                  payments, and analytics
-                </li>
-                <li>
-                  Actively contributed to deployment and monitoring workflows
+                  Integrated secure authentication, payments, and analytics for
+                  multi-language mobile app with over <span className="font-bold text-gray-300">1M users</span>.
                 </li>
               </ul>
             </div>
@@ -362,26 +367,28 @@ const Resume = () => {
             {/* Project 1 */}
             <div>
               <h3 className="font-bold text-lg mb-2">
-                3-Tier Web Application on EKS(Amazon Elastic Kubernetes Service)
+                3-Tier Web Application on Amazon EKS
               </h3>
               <p className="text-sm font-semibold mb-2">
-                Tools/Tech: Gitlab CI/CD, Kubernetes, Helm, ArgoCD, SonarQube, Terraform, AWS
+                Tools/Tech: Gitlab CI/CD, Kubernetes, Helm, ArgoCD, SonarQube,
+                Terraform, AWS
               </p>
               <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                 <li>
-                  Designed and deployed a microservice-based app on EKS with Ingress and cert-manager for HTTPS.
+                  Designed and deployed a production-grade <span className="font-bold text-gray-300">microservices
+                  architecture</span> on <span className="font-bold text-gray-300">EKS</span> with HTTPS via <span className="font-bold text-gray-300">cert-manager</span> and Ingress.
                 </li>
                 <li>
-                  Automated CI/CD using Gitlab CI/CD and ArgoCD with zero-downtime rolling updates.
+                  Built automated <span className="font-bold text-gray-300">CI/CD pipelines</span> using GitLab CI/CD and <span className="font-bold text-gray-300">ArgoCD</span>,
+                  achieving <span className="font-bold text-gray-300">zero-downtime rolling updates</span>.
                 </li>
                 <li>
-                  Integrated SonarQube for code quality and security scans in the pipeline.
+                  Integrated <span className="font-bold text-gray-300"></span>SonarQube for code quality checks and <span className="font-bold text-gray-300">Loki +
+                  Grafana</span> for centralized logging and observability.
                 </li>
                 <li>
-                  Implemented centralized logging using Loki and Alloy, visualized via Grafana dashboards.
-                </li>
-                <li>
-                  Created alerts for CPU/memory usage and request latency.
+                  Introduced <span className="font-bold text-gray-300">monitoring and alerting</span> using <span className="font-bold text-gray-300">Prometheus</span> and
+                  <span className="font-bold text-gray-300">Grafana</span>, improving incident response time by 30%.
                 </li>
               </ul>
             </div>
@@ -391,23 +398,44 @@ const Resume = () => {
             {/* Project 2 */}
             <div>
               <h3 className="font-bold text-lg mb-2">
-                Terraform Infrastructure for AWS
+                AWS Terraform Infrastructure Automation
               </h3>
               <p className="text-sm font-semibold mb-2">
                 Tools/Tech: Gitlab CI/CD, Terraform, AWS
               </p>
               <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                 <li>
-                  Built reusable Terraform modules for VPC, EC2, and RDS deployments across dev and prod environments.
+                  Developed reusable <span className="font-bold text-gray-300">Terraform modules</span> for VPC, EC2, and RDS,
+                  used across development and production environments.prod
+                  environments.
                 </li>
                 <li>
-                  Integrated with GitLab CI/CD for automated plan/apply workflows.
+                  Integrated automated <span className="font-bold text-gray-300">plan/apply pipelines</span> via GitLab CI/CD for
+                  infrastructure change control.
+                </li>
+                <li>
+                  Improved provisioning consistency and reduced manual
+                  configuration errors by 80%.
                 </li>
               </ul>
             </div>
           </CardContent>
         </Card>
-
+        {/* Achievements */}
+        <Card className="mb-6">
+          <CardHeader>
+            <CardTitle>Achievements</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-muted-foreground">
+              Blog published on{" "}
+              <a href="https://dev.to/cheulong" target="_blank" rel="noopener noreferrer" className="underline text-primary">
+                dev.to
+              </a>
+              &nbsp;(2000+ reads)
+            </p>
+          </CardContent>
+        </Card>
         {/* Languages */}
         <Card className="mb-6">
           <CardHeader>
