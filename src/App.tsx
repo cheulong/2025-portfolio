@@ -9,6 +9,7 @@ import Work from "./pages/Work";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
+import ProjectDetail1 from "./pages/ProjectDetail1";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Resume from "./pages/Resume";
@@ -30,6 +31,7 @@ const App = () => (
             <Route path="/work" element={<Work />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/deploying-movies-finder-eks-gitops" element={<ProjectDetail1 />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />

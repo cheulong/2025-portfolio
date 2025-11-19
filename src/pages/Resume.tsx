@@ -432,7 +432,7 @@ const Resume = () => {
               <a href="https://dev.to/cheulong" target="_blank" rel="noopener noreferrer" className="underline text-primary">
                 dev.to
               </a>
-              &nbsp;(2000+ reads)
+              &nbsp;(2500+ reads)
             </p>
           </CardContent>
         </Card>

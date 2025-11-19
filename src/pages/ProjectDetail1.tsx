@@ -2,22 +2,28 @@ import { useParams, Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import { ArrowLeft, Github, ExternalLink, Gitlab } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import moviesFinder from "@/assets/projects/movies-finder.gif";
 import moviesFinderDiagram from "@/assets/projects/movies-finder-diagram.png";
 import image1 from "@/assets/projects/1/image1.png";
 import image2_1 from "@/assets/projects/2/image.png";
+import image1_0 from "@/assets/projects/1/image.png";
+import image1_2 from "@/assets/projects/1/image2.png";
+import image1_3 from "@/assets/projects/1/image3.png";
+import image1_4 from "@/assets/projects/1/image4.png";
+import image1_5 from "@/assets/projects/1/image5.png";
+import image1_6 from "@/assets/projects/1/image6.png";
 
-const ProjectDetail = () => {
-  const { id } = useParams();
-
+const ProjectDetail1 = () => {
+  // const { id } = useParams();
+  const id = "deploying-movies-finder-eks-gitops";
   // Project data - in a real app, this would come from an API or database
   const projects = [
     {
       id: "deploying-movies-finder-eks-gitops",
       title:
-        "Deploying the movies finder Web App on EKS with GitOps (ArgoCD + Helm)",
+        "Deploying the movies finder Web App on Kubernetes with GitOps (ArgoCD + Helm)",
       thumbnail: moviesFinder,
       fullDescription:
         "Movies finder is a web application that allows users to search for movies and view details about them. The app is built using React.js, with data sourced from the TMDB API. The deployment is automated using a GitOps approach with ArgoCD and Helm on an Amazon EKS cluster.",
@@ -80,8 +86,8 @@ const ProjectDetail = () => {
         "gitops",
         "helm",
       ],
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
+      githubUrl: "https://gitlab.com/cheulong-devops/movies-finder",
+      liveUrl: "https://movies-finder-frontend.vercel.app",
     },
     {
       id: "deploying-3-tier-project-management-aws-services",
@@ -108,7 +114,7 @@ const ProjectDetail = () => {
           "Gained expertise in modern testing practices and learned the importance of test maintainability. Understanding of browser automation and cross-browser compatibility issues deepened significantly.",
       },
       tags: ["test", "e2e", "playwright", "automation", "typescript"],
-      githubUrl: "https://github.com",
+      githubUrl: "https://gitlab.com/cheulong-devops/movies-finder",
     },
   ];
 
@@ -262,8 +268,8 @@ const ProjectDetail = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Github className="mr-2" size={18} />
-                    View on GitHub
+                    <Gitlab className="mr-2" size={18} />
+                    View on GitLab
                   </a>
                 </Button>
               )}
@@ -306,24 +312,22 @@ const ProjectDetail = () => {
               {project.fullDescription}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-
               Project: CI/CD Pipeline for a 3-Tier Web App on AWS
-</p>
-         
-            <p className="text-muted-foreground leading-relaxed">
+            </p>
 
-Goal: Automate build, test, and deployment of a Node.js + React + MongoDB app to EKS
-</p>
-         
             <p className="text-muted-foreground leading-relaxed">
+              Goal: Automate build, test, and deployment of a Node.js + React +
+              MongoDB app to EKS
+            </p>
 
-Tools: GitLab CI/CD, Docker, Terraform, AWS EKS, ArgoCD, Prometheus, Grafana
-</p>
-         
             <p className="text-muted-foreground leading-relaxed">
+              Tools: GitLab CI/CD, Docker, Terraform, AWS EKS, ArgoCD,
+              Prometheus, Grafana
+            </p>
 
-Result: Reduced deployment time from 30 mins to 5 mins
-</p>
+            <p className="text-muted-foreground leading-relaxed">
+              Result: Reduced deployment time from 30 mins to 5 mins
+            </p>
           </Card>
 
           {project.details.architecture && (
@@ -428,7 +432,55 @@ Result: Reduced deployment time from 30 mins to 5 mins
               )}
             </Card>
           )}
+          <Card
+            className="p-8 bg-card border-border animate-fade-in"
+            style={{ animationDelay: "0.5s" }}
+          >
+            <h2 className="text-2xl font-bold mb-4">Monitoring</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              {project.details.challenges}
+            </p>
+            <img
+              src={image1_0}
+              alt={image1_0}
+              className="mt-1 shadow-card max-w-2xl"
+            />
+             <img
+              src={image1_2}
+              alt={image1_2}
+              className="mt-1 shadow-card max-w-2xl"
+            />
+            <img
+              src={image1_3}
+              alt={image1_3}
+              className="mt-1 shadow-card max-w-2xl"
+            />
+            <img
+              src={image1_5}
+              alt={image1_5}
+              className="mt-1 shadow-card max-w-2xl"
+            />
+            <img
+              src={image1_4}
+              alt={image1_4}
+              className="mt-1 shadow-card max-w-2xl"
+            />
+<img
+              src={image1_6}
+              alt={image1_6}
+              className="mt-1 shadow-card max-w-2xl"
+            />
 
+          </Card>
+          <Card
+            className="p-8 bg-card border-border animate-fade-in"
+            style={{ animationDelay: "0.5s" }}
+          >
+            <h2 className="text-2xl font-bold mb-4">Security</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Following the DevSecOps principles, I integrated security measures throughout the CI/CD pipeline. This included implementing image scanning for vulnerabilities using tools like Trivy, enforcing strict IAM roles and policies for AWS resources, and utilizing sealed-secrets to manage sensitive information securely within the GitOps workflow. Regular security audits and compliance checks were also automated to ensure the application adhered to best practices and industry standards.
+            </p>
+          </Card>
           {project.details.challenges && (
             <Card
               className="p-8 bg-card border-border animate-fade-in"
@@ -472,4 +524,4 @@ Result: Reduced deployment time from 30 mins to 5 mins
   );
 };
 
-export default ProjectDetail;
+export default ProjectDetail1;
