@@ -14,6 +14,8 @@ import image1_3 from "@/assets/projects/1/image3.png";
 import image1_4 from "@/assets/projects/1/image4.png";
 import image1_5 from "@/assets/projects/1/image5.png";
 import image1_6 from "@/assets/projects/1/image6.png";
+import image1_7 from "@/assets/projects/1/image7.png";
+import image1_8 from "@/assets/projects/1/image8.png";
 
 const ProjectDetail1 = () => {
   // const { id } = useParams();
@@ -836,65 +838,94 @@ const ProjectDetail1 = () => {
               Observability & Monitoring
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              {project.details.challenges}
+              To ensure high availability and rapid incident response, I
+              implemented a full observability stack using the
+              Kube-Prometheus-Stack and OpenTelemetry.
             </p>
-            <img
-              src={image1_0}
-              alt={image1_0}
-              className="mt-1 shadow-card max-w-2xl"
-            />
-            <img
-              src={image1_2}
-              alt={image1_2}
-              className="mt-1 shadow-card max-w-2xl"
-            />
-            <img
-              src={image1_3}
-              alt={image1_3}
-              className="mt-1 shadow-card max-w-2xl"
-            />
+            <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+              <li>
+                <span className="font-bold">Cluster Health:</span> Continuous
+                monitoring of baremetal node resources (CPU, Memory, Disk I/O)
+                using{" "}
+                <span className="font-bold">Prometheus Node Exporter</span>.
+              </li>
+              <img
+                src={image1_3}
+                alt={image1_3}
+                className="mt-1 shadow-card max-w-2xl ml-6"
+              />
+              <br />
+              <li className="leading-relaxed">
+                <span className="font-bold">
+                  Application Performance (APM):
+                </span>{" "}
+                Utilized <span className="font-bold">Grafana Alloy</span>
+                (OpenTelemetry Collector) to scrape application metrics,
+                allowing for visualization of the "Golden Signals":
+                <ul className="list-disc list-inside ml-6">
+                  <li>
+                    <span className="font-bold">Latency:</span> Request
+                    duration.
+                  </li>
+                  <li>
+                    <span className="font-bold">Traffic:</span> Requests per
+                    second (RPS).
+                  </li>
+                  <li>
+                    <span className="font-bold">Errors:</span> Failed HTTP
+                    responses (5xx codes).
+                  </li>
+                  <li>
+                    <span className="font-bold">Saturation:</span> Resource
+                    fullness.
+                  </li>
+                </ul>
+              </li>
+              <img
+                src={image1_7}
+                alt={image1_7}
+                className="mt-1 shadow-card max-w-2xl ml-6"
+              />
+              <br />
+              <img
+                src={image1_8}
+                alt={image1_8}
+                className="mt-1 shadow-card max-w-2xl ml-6"
+              />
+              <br />
+              <img
+                src={image1_0}
+                alt={image1_0}
+                className="mt-1 shadow-card max-w-2xl ml-6"
+              />
+              <br />
+              <img
+                src={image1_2}
+                alt={image1_2}
+                className="mt-1 shadow-card max-w-2xl ml-6"
+              />
+              <br />
+              <li>
+                <span className="font-bold">Alerting:</span> Configured{" "}
+                <span className="font-bold">Alertmanager</span> to route
+                critical notifications (e.g., KubeNodeNotReady,
+                PodCrashLoopBackOff) directly to a dedicated{" "}
+                <span className="font-bold">Slack</span> channel, enabling
+                immediate response to outages.
+              </li>
+            </ul>
+            <br />
             <img
               src={image1_5}
               alt={image1_5}
-              className="mt-1 shadow-card max-w-2xl"
+              className="mt-1 shadow-card max-w-2xl ml-6"
             />
+            <br />
             <img
               src={image1_4}
               alt={image1_4}
-              className="mt-1 shadow-card max-w-2xl"
+              className="mt-1 shadow-card max-w-2xl ml-6"
             />
-            <img
-              src={image1_6}
-              alt={image1_6}
-              className="mt-1 shadow-card max-w-2xl"
-            />
-            Observability & Monitoring To ensure high availability and rapid
-            incident response, I implemented a full observability stack using
-            the Kube-Prometheus-Stack and OpenTelemetry. Cluster Health:
-            Continuous monitoring of baremetal node resources (CPU, Memory, Disk
-            I/O) using Prometheus Node Exporter. Application Performance (APM):
-            Utilized Grafana Alloy (OpenTelemetry Collector) to scrape
-            application metrics, allowing for visualization of the "Golden
-            Signals": Latency: Request duration. Traffic: Requests per second
-            (RPS). Errors: Failed HTTP responses (5xx codes). Saturation:
-            Resource fullness. Alerting: Configured Alertmanager to route
-            critical notifications (e.g., KubeNodeNotReady, PodCrashLoopBackOff)
-            directly to a dedicated Slack channel, enabling immediate response
-            to outages.
-            <br />
-            Monitoring Architecture The project moves beyond simple logging by
-            implementing a comprehensive observability pipeline: Data Collection
-            (Grafana Alloy): Deployed Alloy as a DaemonSet to act as the
-            OpenTelemetry Collector. It gathers metrics from the Kubernetes API,
-            Node Exporter, and the React application itself. Storage &
-            Aggregation (Prometheus): Prometheus scrapes these targets via
-            ServiceMonitors defined in Helm charts, retaining time-series data
-            for historical analysis. Visualization (Grafana): Custom Dashboards
-            provide real-time views into the cluster state. I utilized
-            "Infrastructure as Code" to provision these dashboards automatically
-            using ConfigMaps. Alerting Pipeline: Alertmanager rules define
-            thresholds for anomalies. When triggered, alerts are formatted and
-            pushed to Slack via a webhook integration.
           </Card>
           <Card
             className="p-8 bg-card border-border animate-fade-in"
@@ -1227,31 +1258,100 @@ const ProjectDetail1 = () => {
             className="p-8 bg-card border-border animate-fade-in"
             style={{ animationDelay: "0.5s" }}
           >
-            <h2 className="text-2xl font-bold mb-4">How to start:</h2>
-            Since this project utilizes Sealed Secrets for GitOps security, the
-            configuration files in this repository are encrypted for my specific
-            cluster controller. However, you can replicate the deployment using
-            the steps below. Environment Configuration You will need a TMDB API
-            Key to fetch movie data. Copy the example env file: cp .env.example
-            .env Insert your key: VITE_TMDB_API_KEY=12345... 🐳 Option A: Docker
-            Compose (Quick Start) For a quick preview of the full stack without
-            a Kubernetes cluster: Bash docker-compose up --build -d Access the
-            application at http://localhost:3000. ☸️ Option B: Kubernetes
-            Deployment This project uses ArgoCD for continuous delivery. To
-            verify the manifests or deploy to your own cluster: 1. Bootstrap
-            Infrastructure Bash # Install ArgoCD (if not present) kubectl create
-            namespace argocd kubectl apply -n argocd -f
-            https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-            # Apply the "App of Apps" manifest kubectl apply -f
-            k8s/argocd/application.yaml 2. Handling Secrets Note: The secrets in
-            /k8s/manifests/sealed-secrets.yaml are encrypted with my cluster's
-            public key. To run this on your cluster, you must generate your own
-            secret: Bash kubectl create secret generic tmdb-secret \
-            --from-literal=api-key=YOUR_KEY \ --dry-run=client -o yaml &gt;
-            k8s/manifests/my-secret.yaml 🧪 Running Tests The CI pipeline
-            automatically runs these, but you can trigger them manually: Bash
-            npm run test:unit # Runs Vitest npm run test:e2e # Runs Playwright
-            npm run scan:vuln # Runs Trivy filesystem scan
+            <h2 className="text-2xl font-bold mb-4">
+              Getting Started & Installation:
+            </h2>
+            <div>
+              <p>
+                Since this project utilizes Sealed Secrets for GitOps security,
+                the configuration files in this repository are encrypted for my
+                specific cluster controller. However, you can replicate the
+                deployment using the steps below.
+              </p>
+              <br />
+              <p className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
+                git clone
+                https://gitlab.com/cheulong-devops/movies-finder/new-movies-finder-frontend.git
+              </p>
+              <br />
+              <h3 className="text-lg font-semibold mb-2">
+                Environment Configuration
+              </h3>
+              <p>You will need a TMDB API Key to fetch movie data.</p>
+              <br />
+              <div className="block">
+                <pre class="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
+                  <code class="language-javascript">
+                    <span className="text-gray-500"># For Bash</span>
+                    <br />
+                    export VITE_TMDB_API_KEY=12345...
+                    <br />
+                    docker compose -f compose.prod.yml up --build -d
+                  </code>
+                </pre>
+              </div>
+              <br />
+              <p className="leading-relaxed">Clean up</p>
+              <div className="block">
+                <pre class="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
+                  <code class="language-javascript">
+                    docker compose -f compose.prod.yml down --rmi all
+                  </code>
+                </pre>
+              </div>
+              <br />
+              <h3 className="text-lg font-semibold mb-2">Running Tests</h3>
+              <p>
+                The CI pipeline automatically runs these, but you can trigger
+                them manually:
+              </p>
+              <br />
+              <div className="block">
+                <pre class="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
+                  <code class="language-javascript">
+                    npm run test{" "}
+                    <span className="text-gray-500"># Runs Vitest</span>
+                    <br />
+                    npm run playwright{" "}
+                    <span className="text-gray-500"># Runs Playwright</span>
+                    <br />
+                    npm run scan:trivy:fs{" "}
+                    <span className="text-gray-500">
+                      # Runs Trivy filesystem scan
+                    </span>
+                  </code>
+                </pre>
+              </div>
+              {/* <p className="text-muted-foreground leading-relaxed">
+                {detailStep.description}
+              </p>
+              {detailStep?.image && (
+                <img
+                  src={detailStep.image}
+                  alt={detailStep.step}
+                  className="mt-4 shadow-card max-w-2xl"
+                />
+              )}
+              {detailStep?.smallSteps && (
+                <ul className="mt-4 list-none list-inside space-y-2">
+                  {detailStep.smallSteps.map((smallStep, idx) => (
+                    <li key={idx} className="text-muted-foreground">
+                      <span className="font-bold text-gray-300">
+                        {index + 1}.{idx + 1}&nbsp;
+                        {smallStep.description}
+                      </span>
+                      {smallStep?.image && (
+                        <img
+                          src={smallStep.image}
+                          alt={smallStep.image}
+                          className="mt-1 shadow-card max-w-2xl"
+                        />
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )} */}
+            </div>
           </Card>
 
           {/* {project.details.learning && (
