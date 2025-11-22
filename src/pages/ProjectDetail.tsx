@@ -306,24 +306,22 @@ const ProjectDetail = () => {
               {project.fullDescription}
             </p>
             <p className="text-muted-foreground leading-relaxed">
-
               Project: CI/CD Pipeline for a 3-Tier Web App on AWS
-</p>
-         
-            <p className="text-muted-foreground leading-relaxed">
+            </p>
 
-Goal: Automate build, test, and deployment of a Node.js + React + MongoDB app to EKS
-</p>
-         
             <p className="text-muted-foreground leading-relaxed">
+              Goal: Automate build, test, and deployment of a Node.js + React +
+              MongoDB app to EKS
+            </p>
 
-Tools: GitLab CI/CD, Docker, Terraform, AWS EKS, ArgoCD, Prometheus, Grafana
-</p>
-         
             <p className="text-muted-foreground leading-relaxed">
+              Tools: GitLab CI/CD, Docker, Terraform, AWS EKS, ArgoCD,
+              Prometheus, Grafana
+            </p>
 
-Result: Reduced deployment time from 30 mins to 5 mins
-</p>
+            <p className="text-muted-foreground leading-relaxed">
+              Result: Reduced deployment time from 30 mins to 5 mins
+            </p>
           </Card>
 
           {project.details.architecture && (

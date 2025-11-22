@@ -10,7 +10,7 @@ import moviesFinder from "@/assets/projects/movie-finder-poster.png";
 const Projects = () => {
   const projects = [
     {
-      id: "deploying-movies-finder-eks-gitops",
+      id: "deploying-movies-finder",
       title:
         "Deploying the movies finder Web App on EKS with GitOps (ArgoCD + Helm)",
       description:

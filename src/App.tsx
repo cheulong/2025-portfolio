@@ -31,7 +31,7 @@ const App = () => (
             <Route path="/work" element={<Work />} />
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/deploying-movies-finder-eks-gitops" element={<ProjectDetail1 />} />
+            <Route path="/projects/deploying-movies-finder" element={<ProjectDetail1 />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
