@@ -12,11 +12,13 @@ const Projects = () => {
     {
       id: "deploying-movies-finder",
       title:
-        "Deploying the movies finder Web App on EKS with GitOps (ArgoCD + Helm)",
+        "End-to-End DevSecOps Project with GitOps (ArgoCD + Helm) (Movies Finder web app)",
       description:
-        "Movies finder is a web application that allows users to search for movies and view details about them. The app is built using React.js, with data sourced from the TMDB API. The deployment is automated using a GitOps approach with ArgoCD and Helm on an Amazon EKS cluster.",
+        "Movies finder is a web application that allows users to search for movies and view details about them. The app is built using React.js, with data sourced from the TMDB API. The deployment is automated using a GitOps approach with ArgoCD and Helm on a bare-metal Kubernetes.",
       thumbnail: moviesFinder,
-      tags: ["argocd", "kubernetes", "terraform", "aws", "monitoring"],
+      tags: ["argocd", "kubernetes", "docker", "gitlab ci/cd", "prometheus","grafana", "monitoring", "homelab", "ingress" , "helm"],
+
+
       // details: {
       //   architecture:
       //     "The pipeline includes a GitHub Actions workflow that builds Docker images, pushes them to Docker Hub, and triggers an ArgoCD sync to deploy the latest version on AKS.",
@@ -29,14 +31,14 @@ const Projects = () => {
       //     "This project taught me how GitOps simplifies deployments. Next, I plan to add Terraform to manage cluster infrastructure and integrate Prometheus for observability.",
       // },
     },
-    {
-      id: "deploying-3-tier-project-management-aws-services",
-      title: "Build a Nextjs Project Management App & Deploy on AWS",
-      description:
-        "Project Management App is a web application that helps teams manage projects, tasks, and collaboration. The app is built using React.js for the frontend, Node.js with Express for the backend, and Postgres for data storage. The deployment leverages various AWS services to ensure scalability, reliability, and security.",
-      thumbnail: aksGitopsThumb,
-      tags: ["argocd", "kubernetes", "terraform", "monitoring"],
-    },
+    // {
+    //   id: "deploying-3-tier-project-management-aws-services",
+    //   title: "Build a Nextjs Project Management App & Deploy on AWS",
+    //   description:
+    //     "Project Management App is a web application that helps teams manage projects, tasks, and collaboration. The app is built using React.js for the frontend, Node.js with Express for the backend, and Postgres for data storage. The deployment leverages various AWS services to ensure scalability, reliability, and security.",
+    //   thumbnail: aksGitopsThumb,
+    //   tags: ["argocd", "kubernetes", "terraform", "monitoring"],
+    // },
     // {
     //   id: "deploying-microservices-3-tier-ecommerce-aks-gitops",
     //   title: "Deploying Microservices 3-tier e-commerce app on AKS with GitOps",
@@ -67,7 +69,7 @@ const Projects = () => {
   ];
 
   // Semantic colors based on technology
-  const getTagColor = (tag: string) => {
+   const getTagColor = (tag: string) => {
     const colorMap: Record<string, string> = {
       // DevOps tools
       argocd:
@@ -82,6 +84,9 @@ const Projects = () => {
       // CI/CD
       gitlab:
         "bg-orange-700/20 text-orange-800 dark:text-orange-300 border-orange-700/30",
+      "gitlab ci/cd":
+        "bg-orange-700/20 text-orange-800 dark:text-orange-300 border-orange-700/30",
+
       cicd: "bg-violet-600/20 text-violet-700 dark:text-violet-300 border-violet-600/30",
       gitops: "bg-red-700/20 text-red-800 dark:text-red-300 border-red-700/30",
 
@@ -136,6 +141,7 @@ const Projects = () => {
         "bg-emerald-600/20 text-emerald-700 dark:text-emerald-300 border-emerald-600/30",
       monitoring:
         "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
+      helm: "bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 border-indigo-600/30",
     };
 
     return (

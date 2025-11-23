@@ -177,10 +177,13 @@ const ProjectDetail1 = () => {
                 {[
                   "argocd",
                   "kubernetes",
-                  "terraform",
-                  "aws",
+                  "docker",
+                  "gitlab ci/cd",
+                  "prometheus",
+                  "grafana",
                   "monitoring",
-                  "gitops",
+                  "homelab",
+                  "ingress",
                   "helm",
                 ].map((tag) => (
                   <Badge
@@ -235,6 +238,9 @@ const ProjectDetail1 = () => {
                 />
               </div>
             </div>
+            {/* ================================
+          ======= Overview ====== 
+          ====================================*/}
             <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.1s" }}
@@ -244,7 +250,7 @@ const ProjectDetail1 = () => {
                 Project: End-to-End DevSecOps Project (Movies Finder)
               </p>
               <br />
-              <p className="leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 <span className="font-bold"> Overview</span> While the visible
                 application is a React-based Movie Finder (consuming TMDB API),
                 this project serves as a comprehensive proof-of-concept for a
@@ -254,7 +260,7 @@ const ProjectDetail1 = () => {
                 principles.
               </p>
               <br />
-              <p className="leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 <span className="font-bold">Goal</span> To architect a
                 "Zero-Touch" delivery pipeline that automates the build,
                 testing, security scanning, and deployment processes, ensuring
@@ -262,13 +268,12 @@ const ProjectDetail1 = () => {
                 manual intervention.
               </p>
               <br />
-              <p>
+              <p className="text-muted-foreground">
                 <span className="font-bold">Tech Stack & Tools</span>
                 <ul className="list-disc list-inside leading-relaxed">
                   <li>
                     <span className="font-bold">Infrastructure & GitOps:</span>{" "}
-                    Kubernetes, Docker, Helm, ArgoCD, Terraform, Baremetal
-                    Homelab
+                    Kubernetes, Docker, Helm, ArgoCD, Baremetal Homelab
                   </li>
                   <li>
                     <span className="font-bold">CI/CD & Release:</span> GitLab
@@ -290,7 +295,7 @@ const ProjectDetail1 = () => {
                 </ul>
               </p>
               <br />
-              <p>
+              <p className="text-muted-foreground">
                 <span className="font-bold">Key Results & Achievements</span>
                 <ul className="list-disc list-inside">
                   <li className="">
@@ -327,6 +332,9 @@ const ProjectDetail1 = () => {
                 </ul>
               </p>
             </Card>
+            {/* ================================
+          ======= Agenda ====== 
+          ====================================*/}
             <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.1s" }}
@@ -380,56 +388,66 @@ const ProjectDetail1 = () => {
                   1. Infrastructure & Control Plane (The Foundation) &nbsp;
                 </h3>
                 <br />
-                <p className="indent-6">
-                  The application is deployed to a baremetal Kubernetes cluster
-                  [Correct this if you used AKS]. The configuration repository
-                  serves as the Single Source of Truth for all cluster state,
-                  managed and enforced by ArgoCD. This pull-based mechanism
-                  guarantees immutability and eliminates configuration drift.
-                  Helm charts abstract the Kubernetes manifests, providing
-                  templated flexibility for deploying the application across
-                  various lifecycle environments.
+                <p className="text-muted-foreground indent-6">
+                  The application is deployed to a bare-metal Kubernetes
+                  cluster. The configuration repository serves as the Single
+                  Source of Truth for all cluster state, managed and enforced by
+                  ArgoCD. This pull-based mechanism guarantees immutability and
+                  eliminates configuration drift. Helm charts abstract the
+                  Kubernetes manifests, providing templated flexibility for
+                  deploying the application across various lifecycle
+                  environments.
                 </p>
                 <br />
                 <h3 className="text-lg font-semibold flex text-center">
                   2. Continuous Integration (GitLab CI) &nbsp;
                 </h3>
                 <br />
-                <ul className=" list-disc list-inside leading-relaxed">
+                <ul className="text-muted-foreground list-disc list-inside leading-relaxed">
                   <li>
-                    Testing Gates: Runs unit tests (Vitest) and end-to-end tests
-                    (Playwright).
+                    <span className="font-bold">Testing Gates:</span> Runs unit
+                    tests <span className="font-bold">(Vitest)</span> and
+                    end-to-end tests
+                    <span className="font-bold">(Playwright)</span>.
                   </li>
                   <li>
-                    Code Quality: Static Analysis (SAST) and Gitleaks check for
+                    <span className="font-bold">Code Quality:</span> Static
+                    Analysis (SAST) and{" "}
+                    <span className="font-bold">Gitleaks</span> check for
                     secrets and vulnerabilities.
                   </li>
                   <li>
-                    Security Gates: Uses Trivy to scan the built Docker image
-                    for CVEs and Syft to generate an SBOM.
+                    <span className="font-bold">Security Gates:</span> Uses{" "}
+                    <span className="font-bold">Trivy</span> to scan the built
+                    Docker image for CVEs and{" "}
+                    <span className="font-bold">Syft</span> to generate an SBOM.
                   </li>
                   <li>
-                    Artifact Flow: Upon successful build, the immutable Docker
-                    image is tagged and pushed to the registry, triggering the
-                    deployment phase.
+                    <span className="font-bold">Artifact Flow:</span> Upon
+                    successful build, the immutable Docker image is tagged and
+                    pushed to the registry, triggering the deployment phase.
                   </li>
                 </ul>
                 <br />
                 <h3 className="text-lg font-semibold flex text-center">
                   3. Continuous Delivery & Resilience (ArgoCD) &nbsp;
                 </h3>
-                <p>The deployment process is entirely automated:</p>
+                <p className="text-muted-foreground">
+                  The deployment process is entirely automated:
+                </p>
                 <br />
-                <ul className=" list-disc list-inside leading-relaxed">
+                <ul className="text-muted-foreground list-disc list-inside leading-relaxed">
                   <li>
-                    Deployment Flow: ArgoCD detects the new image tag, initiates
-                    a synchronous update, and uses Sealed Secrets to securely
-                    inject runtime configuration.
+                    <span className="font-bold">Deployment Flow:</span> ArgoCD
+                    detects the new image tag, initiates a synchronous update,
+                    and uses <span className="font-bold">Sealed Secrets</span>{" "}
+                    to securely inject runtime configuration.
                   </li>
                   <li>
-                    Self-Healing: Kubernetes handles pod scheduling and
-                    self-healing, while ArgoCD ensures any manual changes to the
-                    environment are reverted to match the desired state in Git.
+                    <span className="font-bold">Self-Healing:</span> Kubernetes
+                    handles pod scheduling and self-healing, while ArgoCD
+                    ensures any manual changes to the environment are reverted
+                    to match the desired state in Git.
                   </li>
                 </ul>
                 <img
@@ -442,13 +460,18 @@ const ProjectDetail1 = () => {
                   4. Observability Stack &nbsp;
                 </h3>
                 <br />
-                <p>
-                  The platform includes full-stack observability to monitor the
-                  cluster and application health proactively. OpenTelemetry
-                  instruments the application for logs, with Prometheus
-                  collecting metrics and Grafana providing real-time
-                  visualization of the "Golden Signals" and hardware
-                  performance.
+                <p className="text-muted-foreground">
+                  The platform includes{" "}
+                  <span className="font-bold">full-stack observability</span> to
+                  monitor the cluster and application health proactively.{" "}
+                  <span className="font-bold">OpenTelemetry</span>
+                  instruments the application for logs, with{" "}
+                  <span className="font-bold">Prometheus</span>
+                  collecting metrics and{" "}
+                  <span className="font-bold">Grafana</span> providing real-time
+                  visualization of the{" "}
+                  <span className="font-bold">"Golden Signals"</span> and
+                  hardware performance.
                 </p>
               </div>
             </Card>
@@ -465,10 +488,10 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold flex text-center">
                   CI/CD & GitOps:&nbsp;
                 </h3>
-                <p className="text-md font-light italic">
+                <p className="text-muted-foreground text-md font-light italic">
                   Tools that automate the deployment and delivery pipeline.
                 </p>
-                <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-3 list-disc list-inside">
+                <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-3 list-disc list-inside">
                   {[
                     ["GitLab CI/CD", "(Infrastructure as Code)"],
                     ["ArgoCD", "(Container Orchestration)"],
@@ -494,12 +517,12 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold flex text-center">
                   Infrastructure & Orchestration:&nbsp;
                 </h3>
-                <p className="text-md font-light italic">
+                <p className="text-muted-foreground text-md font-light italic">
                   Tools used to run, manage, and provision the environment.
                 </p>
-                <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+                <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                   {[
-                    ["Terraform", "(Infrastructure as Code)"],
+                    // ["Terraform", "(Infrastructure as Code)"],
                     ["Kubernetes", "(Container Orchestration)"],
                     ["Docker", "(Containerization)"],
                     ["Helm", "(Package Manager for Kubernetes)"],
@@ -516,11 +539,11 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold flex text-center">
                   Monitoring & Observability:&nbsp;
                 </h3>
-                <p className="text-md font-light italic">
+                <p className="text-muted-foreground text-md font-light italic">
                   Tools used to visualize data, collect metrics, and alert on
                   issues.
                 </p>
-                <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+                <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                   {[
                     ["Prometheus", "(Metrics collection)"],
                     ["Grafana", "(Visualization)"],
@@ -544,11 +567,11 @@ const ProjectDetail1 = () => {
                   Security (DevSecOps) & SBOM (Software Bill of
                   Materials):&nbsp;
                 </h3>
-                <p className="text-md font-light italic">
+                <p className="text-muted-foreground text-md font-light italic">
                   Tools for scanning, vulnerability management, and supply chain
                   security.
                 </p>
-                <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+                <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                   {[
                     ["SonarCloud", "(Code quality & security scanning)"],
                     ["Trivy", "(Container scanning)"],
@@ -571,11 +594,11 @@ const ProjectDetail1 = () => {
                   Security (DevSecOps) & SBOM (Software Bill of
                   Materials):&nbsp;
                 </h3>
-                <p className="text-md font-light italic">
+                <p className="text-muted-foreground text-md font-light italic">
                   Tools for scanning, vulnerability management, and supply chain
                   security.
                 </p>
-                <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+                <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                   {[
                     ["SonarCloud", "(Code quality & security scanning)"],
                     ["Trivy", "(Container scanning)"],
@@ -597,11 +620,11 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold flex text-center">
                   Frontend & Development Stack:&nbsp;
                 </h3>
-                <p className="text-md font-light italic">
+                <p className="text-muted-foreground text-md font-light italic">
                   The core technologies used to build the application (these
                   were incorrectly listed under "Testing").
                 </p>
-                <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+                <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                   {[
                     ["ReactJs", "(Frontend Library)"],
                     ["Tailwind", "(CSS Framework)"],
@@ -618,10 +641,10 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold flex text-center">
                   Testing & QA:&nbsp;
                 </h3>
-                <p className="text-md font-light italic">
+                <p className="text-muted-foreground text-md font-light italic">
                   Tools used to verify the code actually works.
                 </p>
-                <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+                <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                   {[
                     ["Playwright", "(End-to-End Testing)"],
                     ["Vitest", "(Unit Testing)"],
@@ -637,10 +660,10 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold flex text-center">
                   Code Quality & Git Workflow:&nbsp;
                 </h3>
-                <p className="text-md font-light italic">
+                <p className="text-muted-foreground text-md font-light italic">
                   Tools that enforce coding standards and commit discipline.
                 </p>
-                <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+                <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                   {[
                     ["Husky", "(Git hooks)"],
                     ["Lint-staged", "(Run linters on git staged files)"],
@@ -669,7 +692,7 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold mb-2">
                   1.&nbsp;Infrastructure & Cluster Bootstrapping
                 </h3>
-                <ul className="list-disc list-inside ml-6">
+                <ul className="text-muted-foreground list-disc list-inside ml-6">
                   <li>
                     Provisioned a baremetal Kubernetes cluster (Homelab)
                     ensuring networking connectivity.
@@ -694,7 +717,7 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold mb-2">
                   2.&nbsp;Containerization (Docker)
                 </h3>
-                <ul className="list-disc list-inside ml-6">
+                <ul className="text-muted-foreground list-disc list-inside ml-6">
                   <li>
                     Created a multi-stage{" "}
                     <span className="font-bold">Dockerfile</span> for the React
@@ -715,10 +738,12 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold mb-2">
                   3.&nbsp;The CI Pipeline (GitLab CI)
                 </h3>
-                <ul className="list-disc list-inside ml-6">
+                <ul className="text-muted-foreground list-disc list-inside ml-6">
                   <li>
-                    Designed a pipeline with distinct stages: Test -&gt;
-                    Security -&gt; Build -&gt; Release.
+                    Designed a pipeline with distinct stages: Prepare -&gt; Sast
+                    -&gt; Scan Test -&gt; Build -&gt; Security -&gt; Dast Scan
+                    -&gt; Deploy -&gt; Release -&gt; Slack Notify -&gt; Clean
+                    Up.
                   </li>
                   <li>
                     <span className="font-bold">Testing:</span> Integrated{" "}
@@ -765,11 +790,14 @@ const ProjectDetail1 = () => {
                     className="mt-1 shadow-card max-w-2xl ml-6"
                   />
                 </div>
+                <p className="text-muted-foreground text-md font-light italic mt-2">
+                  Note: This pipeline still can be optimized and improved over time.
+                </p>
                 <br />
                 <h3 className="text-lg font-semibold mb-2">
                   4.&nbsp;GitOps Delivery (ArgoCD)
                 </h3>
-                <ul className="list-disc list-inside ml-6">
+                <ul className="text-muted-foreground list-disc list-inside ml-6">
                   <li>
                     Packaged the application manifests using{" "}
                     <span className="font-bold">Helm Charts</span> for
@@ -781,7 +809,7 @@ const ProjectDetail1 = () => {
                   </li>
                   <li>
                     Implemented <span className="font-bold">Sync Waves</span> to
-                    ensure the database and secrets are ready before the
+                    ensure the secrets are ready before the
                     frontend pods launch.
                   </li>
                 </ul>
@@ -804,15 +832,15 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold mb-2">
                   5.&nbsp;Observability & Monitoring
                 </h3>
-                <ul className="list-disc list-inside ml-6">
+                <ul className="text-muted-foreground list-disc list-inside ml-6">
                   <li>
                     Deployed the{" "}
                     <span className="font-bold">Kube-Prometheus-Stack</span> via
                     Helm.
                   </li>
                   <li>
-                    Configured <span className="font-bold">Grafana Alloy</span>{" "}
-                    (OpenTelemetry Collector) to scrape metrics from the
+                    Configured <span className="font-bold">Grafana Alloy
+                    (OpenTelemetry Collector)</span> to scrape metrics from the
                     application and cluster nodes.
                   </li>
                   <li>
@@ -822,8 +850,8 @@ const ProjectDetail1 = () => {
                   </li>
                   <li>
                     Custom Grafana dashboards display{" "}
-                    <span className="font-bold">"Golden Signals"</span>{" "}
-                    (Latency, Traffic, Errors, Saturation).
+                    <span className="font-bold">"Golden Signals"
+                    (Latency, Traffic, Errors, Saturation)</span>.
                   </li>
                 </ul>
               </div>
@@ -844,7 +872,7 @@ const ProjectDetail1 = () => {
                 implemented a full observability stack using the
                 Kube-Prometheus-Stack and OpenTelemetry.
               </p>
-              <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+              <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                 <li>
                   <span className="font-bold">Cluster Health:</span> Continuous
                   monitoring of baremetal node resources (CPU, Memory, Disk I/O)
@@ -859,7 +887,7 @@ const ProjectDetail1 = () => {
                 <br />
                 <li className="leading-relaxed">
                   <span className="font-bold">
-                    Application Performance (APM):
+                    Application Performance Monitoring (APM):
                   </span>{" "}
                   Utilized <span className="font-bold">Grafana Alloy</span>
                   (OpenTelemetry Collector) to scrape application metrics,
@@ -938,13 +966,13 @@ const ProjectDetail1 = () => {
               id="Security"
             >
               <h2 className="text-2xl font-bold mb-4">Security & DevSecOps</h2>
-              <p className="">
+              <p className="text-muted-foreground">
                 We adopt a <span className="font-bold">"Shift Left"</span>{" "}
                 security philosophy, integrating automated security checks at
                 every stage of the CI/CD pipeline to detect vulnerabilities
                 early.
               </p>
-              <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+              <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                 <li>
                   <span className="font-bold">
                     Static Application Security Testing (SAST):{" "}
@@ -962,8 +990,8 @@ const ProjectDetail1 = () => {
                     </li>
                     <li>
                       <span className="font-bold">Runtime:</span> Kubernetes
-                      secrets are managed via GitOps using
-                      <span className="font-bold">Sealed-Secrets</span>,
+                      secrets are managed via GitOps using 
+                      <span className="font-bold"> Sealed-Secrets</span>,
                       ensuring encryption at rest and safe storage in the git
                       repository.
                     </li>
@@ -1020,12 +1048,12 @@ const ProjectDetail1 = () => {
               style={{ animationDelay: "0.5s" }}
               id="Challenges"
             >
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="text-2xl font-bold">
                 Challenges & Solutions
               </h2>
-              <ul className="leading-relaxed flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+              <ul className="text-muted-foreground leading-relaxed flex flex-col flex-wrap gap-1 align-items-center list-disc list-inside">
                 <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
-                  <li>
+                  {/* <li>
                     <span className="font-bold">
                       Challenge: Resource Dependency & Race Conditions
                     </span>
@@ -1047,7 +1075,7 @@ const ProjectDetail1 = () => {
                         before the application workload was applied.
                       </li>
                     </ul>
-                  </li>
+                  </li> */}
                   <li>
                     <span className="font-bold">
                       Challenge: The "Secret Zero" Problem in GitOps
@@ -1083,7 +1111,7 @@ const ProjectDetail1 = () => {
               id="Results"
             >
               <h2 className="text-2xl font-bold mb-4">Results & Impact</h2>
-              <ul className="leading-relaxed flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+              <ul className="text-muted-foreground leading-relaxed flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                 <li>
                   <span className="font-bold">Accelerated Delivery: </span>
                   Migrated to a GitOps workflow with ArgoCD, reducing deployment
@@ -1121,13 +1149,13 @@ const ProjectDetail1 = () => {
               id="Key"
             >
               <h2 className="text-2xl font-bold mb-4">Key Learnings</h2>
-              <ul className="leading-relaxed flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+              <ul className="text-muted-foreground leading-relaxed flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                 <li>
                   <span className="font-bold">
                     The Power of Immutable Infrastructure:{" "}
                   </span>
                   Adopting a strict GitOps workflow demonstrated how treating
-                  infrastructure as code eliminates "snowflake" servers. It
+                  infrastructure as code eliminates snowflake servers. It
                   ensures that the state of the cluster is always a direct
                   reflection of the git repository, making disaster recovery
                   trivial.
@@ -1159,7 +1187,7 @@ const ProjectDetail1 = () => {
               id="Future"
             >
               <h2 className="text-2xl font-bold mb-4">Future Improvements:</h2>
-              <ul className="leading-relaxed flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
+              <ul className="text-muted-foreground leading-relaxed flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                 <li>
                   <span className="font-bold">Chaos Engineering: </span>
                   Integrating tools like Trivy and SonarCloud taught me that
@@ -1194,7 +1222,7 @@ const ProjectDetail1 = () => {
                 Getting Started & Installation:
               </h2>
               <div>
-                <p>
+                <p className="text-muted-foreground">
                   Since this project utilizes Sealed Secrets for GitOps
                   security, the configuration files in this repository are
                   encrypted for my specific cluster controller. However, you can
@@ -1209,7 +1237,7 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold mb-2">
                   Environment Configuration
                 </h3>
-                <p>You will need a TMDB API Key to fetch movie data.</p>
+                <p className="text-muted-foreground">You will need a TMDB API Key to fetch movie data.</p>
                 <br />
                 <div className="block">
                   <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
@@ -1223,7 +1251,7 @@ const ProjectDetail1 = () => {
                   </pre>
                 </div>
                 <br />
-                <p className="leading-relaxed">Clean up</p>
+                <p className="leading-relaxed text-muted-foreground">Clean up</p>
                 <div className="block">
                   <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
                     <code className="language-javascript">
@@ -1233,7 +1261,7 @@ const ProjectDetail1 = () => {
                 </div>
                 <br />
                 <h3 className="text-lg font-semibold mb-2">Running Tests</h3>
-                <p>
+                <p className="text-muted-foreground">
                   The CI pipeline automatically runs these, but you can trigger
                   them manually:
                 </p>
