@@ -3,7 +3,11 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Github, ExternalLink } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 import moviesFinder from "@/assets/projects/movies-finder.gif";
+import moviesFinderDiagram from "@/assets/projects/movies-finder-diagram.png";
+import image1 from "@/assets/projects/1/image1.png";
+import image2_1 from "@/assets/projects/2/image.png";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -12,15 +16,15 @@ const ProjectDetail = () => {
   const projects = [
     {
       id: "deploying-movies-finder-eks-gitops",
-      title: "Deploying the Movies Finder Web App on AKS with GitOps (ArgoCD + Helm)",
+      title:
+        "Deploying the movies finder Web App on EKS with GitOps (ArgoCD + Helm)",
       thumbnail: moviesFinder,
-      description:
-        "Automate deployment of a web application using CI/CD and Kubernetes GitOps workflow.",
       fullDescription:
-        "This comprehensive DevOps project demonstrates the complete lifecycle of deploying a modern 3-tier web application on Azure Kubernetes Service (AKS) using GitOps principles. The project showcases industry best practices for containerization, orchestration, and continuous deployment.",
+        "Movies finder is a web application that allows users to search for movies and view details about them. The app is built using React.js, with data sourced from the TMDB API. The deployment is automated using a GitOps approach with ArgoCD and Helm on an Amazon EKS cluster.",
       details: {
         architecture:
-          "The pipeline includes a GitHub Actions workflow that builds Docker images, pushes them to Docker Hub, and triggers an ArgoCD sync to deploy the latest version on AKS. The architecture follows a 3-tier model with frontend, backend API, and database layers, all orchestrated through Kubernetes.",
+          "The pipeline includes a Gitlab CI/CD workflow that tests, builds Docker images, pushes them to Docker Hub, and triggers an ArgoCD sync to deploy the latest version on AKS. Helm charts are used for templating Kubernetes manifests, allowing for easy configuration across different environments (dev, staging, prod).",
+        diagram: moviesFinderDiagram,
         tools: [
           "Docker",
           "Kubernetes",
@@ -28,22 +32,44 @@ const ProjectDetail = () => {
           "Terraform",
           "Prometheus",
           "Grafana",
-          "GitHub Actions",
+          "Gitlab CI/CD",
           "Helm",
         ],
         steps: [
+          "Provisioned EKS cluster using eksctl and Terraform",
+          "Initialized and configured project repository with Gitlab",
           "Created Docker images for each tier of the application",
           "Wrote comprehensive Helm charts with environment-specific values",
           "Set up ArgoCD pipeline with automated sync waves",
           "Configured monitoring with Prometheus and Grafana",
-          "Implemented infrastructure as code using Terraform",
+        ],
+        detailSteps: [
+          {
+            step: "Provisioned EKS cluster",
+            description:
+              "Use eksctl to provision an EKS cluster with necessary node groups and networking components.",
+            image: image1,
+          },
+          {
+            step: "Setup gitlab repository",
+            description:
+              "Use eksctl to provision an EKS cluster with necessary node groups and networking components.",
+            image: null,
+            smallSteps: [
+              {
+                image: image1,
+                description:
+                  "Initialized a Gitlab repository and structured it for GitOps.",
+              },
+            ],
+          },
         ],
         challenges:
           "I initially faced an issue where ArgoCD couldn't sync due to missing CRDs. The fix was to use the argocd.argoproj.io/sync-wave annotation in Helm hooks. Additionally, managing secrets across environments required implementing sealed-secrets for secure GitOps workflows.",
         results:
           "Successfully deployed a production-ready application with 99.9% uptime. The GitOps approach reduced deployment time by 60% and eliminated manual deployment errors. Monitoring dashboards provide real-time insights into application health and performance.",
         learning:
-          "This project taught me how GitOps simplifies deployments and ensures consistency across environments. Next, I plan to add Terraform to manage cluster infrastructure and integrate Prometheus for observability. I also gained deep understanding of Kubernetes networking and service mesh concepts.",
+          "This project taught me how GitOps simplifies deployments and ensures consistency across environments. Next, I plan to add Terraform to manage cluster infrastructure and integrate Prometheus for observability.",
       },
       tags: [
         "argocd",
@@ -58,12 +84,11 @@ const ProjectDetail = () => {
       liveUrl: "https://example.com",
     },
     {
-      id: "playwright-testing",
-      title: "What is Playwright?",
-      description:
-        "Playwright is a Node.js library made for browser automation. It is free, open-source and supported by Microsoft.",
+      id: "deploying-3-tier-project-management-aws-services",
+      title: "Build a Nextjs Project Management App & Deploy on AWS",
+      thumbnail: image2_1,
       fullDescription:
-        "An in-depth exploration of Playwright, Microsoft's powerful end-to-end testing framework. This project demonstrates comprehensive testing strategies for modern web applications across multiple browsers.",
+        "Project Management App is a web application that helps teams manage projects, tasks, and collaboration. The app is built using React.js for the frontend, Node.js with Express for the backend, and Postgres for data storage. The deployment leverages various AWS services to ensure scalability, reliability, and security.",
       details: {
         architecture:
           "Implemented a complete testing suite using Playwright for cross-browser testing. The framework includes page object models, custom fixtures, and parallel test execution for optimal performance.",
@@ -86,6 +111,88 @@ const ProjectDetail = () => {
       githubUrl: "https://github.com",
     },
   ];
+
+  // Semantic colors based on technology
+  const getTagColor = (tag: string) => {
+    const colorMap: Record<string, string> = {
+      // DevOps tools
+      argocd:
+        "bg-rose-600/20 text-rose-700 dark:text-rose-300 border-rose-600/30",
+      terraform:
+        "bg-purple-600/20 text-purple-700 dark:text-purple-300 border-purple-600/30",
+      kubernetes:
+        "bg-blue-600/20 text-blue-700 dark:text-blue-300 border-blue-600/30",
+      docker:
+        "bg-blue-400/20 text-blue-600 dark:text-blue-300 border-blue-400/30",
+
+      // CI/CD
+      gitlab:
+        "bg-orange-700/20 text-orange-800 dark:text-orange-300 border-orange-700/30",
+      "gitlab ci/cd":
+        "bg-orange-700/20 text-orange-800 dark:text-orange-300 border-orange-700/30",
+
+      cicd: "bg-violet-600/20 text-violet-700 dark:text-violet-300 border-violet-600/30",
+      gitops: "bg-red-700/20 text-red-800 dark:text-red-300 border-red-700/30",
+
+      // Monitoring
+      prometheus:
+        "bg-red-600/20 text-red-700 dark:text-red-300 border-red-600/30",
+      grafana:
+        "bg-orange-600/20 text-orange-700 dark:text-orange-300 border-orange-600/30",
+      loki: "bg-lime-600/20 text-lime-700 dark:text-lime-300 border-lime-600/30",
+
+      // Infrastructure
+      metallb:
+        "bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-500/30",
+      homelab:
+        "bg-green-600/20 text-green-700 dark:text-green-300 border-green-600/30",
+
+      // Security & Network
+      security:
+        "bg-orange-700/20 text-orange-800 dark:text-orange-300 border-orange-700/30",
+      firewall:
+        "bg-red-700/20 text-red-800 dark:text-red-300 border-red-700/30",
+      network: "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
+
+      // OS & General
+      linux:
+        "bg-yellow-600/20 text-yellow-700 dark:text-yellow-300 border-yellow-600/30",
+      devops:
+        "bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 border-indigo-600/30",
+      deployment:
+        "bg-blue-600/20 text-blue-700 dark:text-blue-300 border-blue-600/30",
+      cloudflare:
+        "bg-orange-600/20 text-orange-700 dark:text-orange-300 border-orange-600/30",
+      "cert-manager":
+        "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
+      ingress:
+        "bg-teal-600/20 text-teal-700 dark:text-teal-300 border-teal-600/30",
+      container:
+        "bg-cyan-600/20 text-cyan-700 dark:text-cyan-300 border-cyan-600/30",
+      ubuntu:
+        "bg-orange-700/20 text-orange-800 dark:text-orange-300 border-orange-700/30",
+      iac: "bg-blue-500/20 text-blue-700 dark:text-blue-300 border-blue-500/30",
+      cloud: "bg-sky-500/20 text-sky-700 dark:text-sky-300 border-sky-500/30",
+      aws: "bg-orange-500/20 text-orange-700 dark:text-orange-300 border-orange-500/30",
+      azure:
+        "bg-blue-700/20 text-blue-800 dark:text-blue-300 border-blue-700/30",
+      proxmox:
+        "bg-purple-700/20 text-purple-800 dark:text-purple-300 border-purple-700/30",
+      vm: "bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 border-indigo-600/30",
+      slack:
+        "bg-violet-600/20 text-violet-700 dark:text-violet-300 border-violet-600/30",
+      automation:
+        "bg-emerald-600/20 text-emerald-700 dark:text-emerald-300 border-emerald-600/30",
+      monitoring:
+        "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
+      helm: "bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 border-indigo-600/30",
+    };
+
+    return (
+      colorMap[tag.toLowerCase()] ||
+      "bg-gray-500/20 text-gray-700 dark:text-gray-300 border-gray-500/30"
+    );
+  };
 
   const project = projects.find((p) => p.id === id);
 
@@ -135,8 +242,10 @@ const ProjectDetail = () => {
               {project.tags.map((tag) => (
                 <Badge
                   key={tag}
-                  variant="secondary"
-                  className="bg-muted text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                  variant="outline"
+                  className={`text-muted-foreground transition-colors ${getTagColor(
+                    tag
+                  )}`}
                 >
                   {tag}
                 </Badge>
@@ -196,6 +305,23 @@ const ProjectDetail = () => {
             <p className="text-muted-foreground leading-relaxed">
               {project.fullDescription}
             </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Project: CI/CD Pipeline for a 3-Tier Web App on AWS
+            </p>
+
+            <p className="text-muted-foreground leading-relaxed">
+              Goal: Automate build, test, and deployment of a Node.js + React +
+              MongoDB app to EKS
+            </p>
+
+            <p className="text-muted-foreground leading-relaxed">
+              Tools: GitLab CI/CD, Docker, Terraform, AWS EKS, ArgoCD,
+              Prometheus, Grafana
+            </p>
+
+            <p className="text-muted-foreground leading-relaxed">
+              Result: Reduced deployment time from 30 mins to 5 mins
+            </p>
           </Card>
 
           {project.details.architecture && (
@@ -207,9 +333,15 @@ const ProjectDetail = () => {
               <p className="text-muted-foreground leading-relaxed">
                 {project.details.architecture}
               </p>
+              {project.details.diagram && (
+                <img
+                  src={project.details.diagram}
+                  alt="Architecture Diagram"
+                  className="mt-4 relative rounded-2xl shadow-card border border-border w-full"
+                />
+              )}
             </Card>
           )}
-
           {project.details.tools && (
             <Card
               className="p-8 bg-card border-border animate-fade-in"
@@ -220,7 +352,10 @@ const ProjectDetail = () => {
                 {project.details.tools.map((tool) => (
                   <Badge
                     key={tool}
-                    className="bg-gradient-primary text-primary-foreground px-4 py-2 text-sm"
+                    variant="outline"
+                    className={`bg-gradient-primary text-primary-foreground px-4 py-2 text-sm ${getTagColor(
+                      tool
+                    )}`}
                   >
                     {tool}
                   </Badge>
@@ -245,6 +380,50 @@ const ProjectDetail = () => {
                   </li>
                 ))}
               </ol>
+              {project.details.detailSteps && (
+                <div className="mt-6 space-y-6">
+                  <Separator className="my-8" />
+                  <h2 className="text-2xl font-bold mb-4">Step Details</h2>
+                  {project.details.detailSteps.map((detailStep, index) => (
+                    <>
+                      <div key={index}>
+                        <h3 className="text-lg font-semibold mb-2">
+                          {index + 1}.&nbsp;{detailStep.step}
+                        </h3>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {detailStep.description}
+                        </p>
+                        {detailStep?.image && (
+                          <img
+                            src={detailStep.image}
+                            alt={detailStep.step}
+                            className="mt-4 shadow-card max-w-2xl"
+                          />
+                        )}
+                        {detailStep?.smallSteps && (
+                          <ul className="mt-4 list-none list-inside space-y-2">
+                            {detailStep.smallSteps.map((smallStep, idx) => (
+                              <li key={idx} className="text-muted-foreground">
+                                <span className="font-bold text-gray-300">
+                                  {index + 1}.{idx + 1}&nbsp;
+                                  {smallStep.description}
+                                </span>
+                                {smallStep?.image && (
+                                  <img
+                                    src={smallStep.image}
+                                    alt={smallStep.image}
+                                    className="mt-1 shadow-card max-w-2xl"
+                                  />
+                                )}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    </>
+                  ))}
+                </div>
+              )}
             </Card>
           )}
 
