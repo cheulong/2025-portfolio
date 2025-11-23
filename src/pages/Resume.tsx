@@ -265,12 +265,16 @@ const Resume = () => {
               </p>
               <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                 <li>
-                  Modernized Electron build pipeline using <span className="font-bold text-gray-300">Azure DevOps</span>,
+                  Modernized Electron build pipeline using{" "}
+                  <span className="font-bold text-gray-300">Azure DevOps</span>,
                   enabling automated versioning and Windows code-signing.
                 </li>
                 <li>
-                  Integrated <span className="font-bold text-gray-300">Playwright</span> end-to-end tests into CI/CD, reducing
-                  manual QA time by <span className="font-bold text-gray-300">40%</span> and increasing release reliability.
+                  Integrated{" "}
+                  <span className="font-bold text-gray-300">Playwright</span>{" "}
+                  end-to-end tests into CI/CD, reducing manual QA time by{" "}
+                  <span className="font-bold text-gray-300">40%</span> and
+                  increasing release reliability.
                 </li>
                 <li>
                   Upgraded Electron framework (v5 → v31) to improve security,
@@ -278,8 +282,9 @@ const Resume = () => {
                 </li>
                 <li>
                   Managed vulnerability scanning and dependency remediation
-                  using <span className="font-bold text-gray-300">Blackduck</span>, maintaining compliance with corporate
-                  standards.
+                  using{" "}
+                  <span className="font-bold text-gray-300">Blackduck</span>,
+                  maintaining compliance with corporate standards.
                 </li>
                 <li>
                   Collaborated with infrastructure teams to optimize CI/CD
@@ -308,22 +313,39 @@ const Resume = () => {
               </p>
               <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                 <li>
-                  Implemented <span className="font-bold text-gray-300">Infrastructure as Code (IaC)</span> using <span className="font-bold text-gray-300">Terraform</span> to
+                  Implemented{" "}
+                  <span className="font-bold text-gray-300">
+                    Infrastructure as Code (IaC)
+                  </span>{" "}
+                  using{" "}
+                  <span className="font-bold text-gray-300">Terraform</span> to
                   automate provisioning of Azure App Services, VNets, and Key
                   Vaults.
                 </li>
                 <li>
-                  Built and maintained <span className="font-bold text-gray-300">Azure DevOps pipelines</span>, reducing
-                  deployment time by <span className="font-bold text-gray-300">60%</span> and improving delivery confidence.
+                  Built and maintained{" "}
+                  <span className="font-bold text-gray-300">
+                    Azure DevOps pipelines
+                  </span>
+                  , reducing deployment time by{" "}
+                  <span className="font-bold text-gray-300">60%</span> and
+                  improving delivery confidence.
                 </li>
                 <li>
-                  Supported <span className="font-bold text-gray-300">DevOps practices</span> in building a secure, scalable
-                  hospital website using Azure services, helping increase
-                  telemedicine adoption by 30%.
+                  Supported{" "}
+                  <span className="font-bold text-gray-300">
+                    DevOps practices
+                  </span>{" "}
+                  in building a secure, scalable hospital website using Azure
+                  services, helping increase telemedicine adoption by 30%.
                 </li>
                 <li>
-                  Integrated <span className="font-bold text-gray-300">Azure Communication Services</span> and <span className="font-bold text-gray-300">SignalR</span> for
-                  real-time communication, improving reliability under load.
+                  Integrated{" "}
+                  <span className="font-bold text-gray-300">
+                    Azure Communication Services
+                  </span>{" "}
+                  and <span className="font-bold text-gray-300">SignalR</span>{" "}
+                  for real-time communication, improving reliability under load.
                 </li>
               </ul>
             </div>
@@ -344,14 +366,21 @@ const Resume = () => {
               </p>
               <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                 <li>
-                  Automated deployment of <span className="font-bold text-gray-300">Firebase Cloud Functions</span> via CI/CD
-                  workflows, cutting manual release time by 50%.Automated
-                  deployment of <span className="font-bold text-gray-300">Firebase Cloud Functions</span> via CI/CD workflows,
-                  cutting manual release time by 50%.
+                  Automated deployment of{" "}
+                  <span className="font-bold text-gray-300">
+                    Firebase Cloud Functions
+                  </span>{" "}
+                  via CI/CD workflows, cutting manual release time by
+                  50%.Automated deployment of{" "}
+                  <span className="font-bold text-gray-300">
+                    Firebase Cloud Functions
+                  </span>{" "}
+                  via CI/CD workflows, cutting manual release time by 50%.
                 </li>
                 <li>
                   Integrated secure authentication, payments, and analytics for
-                  multi-language mobile app with over <span className="font-bold text-gray-300">1M users</span>.
+                  multi-language mobile app with over{" "}
+                  <span className="font-bold text-gray-300">1M users</span>.
                 </li>
               </ul>
             </div>
@@ -367,28 +396,40 @@ const Resume = () => {
             {/* Project 1 */}
             <div>
               <h3 className="font-bold text-lg mb-2">
-                3-Tier Web Application on Amazon EKS
+                End-to-End DevSecOps Project (Movies Finder)
               </h3>
               <p className="text-sm font-semibold mb-2">
                 Tools/Tech: Gitlab CI/CD, Kubernetes, Helm, ArgoCD, SonarQube,
-                Terraform, AWS
+                Prometheus, Grafana, Monitoring, Homelab, Ingress
               </p>
               <ul className="list-disc list-inside space-y-1 text-muted-foreground">
-                <li>
-                  Designed and deployed a production-grade <span className="font-bold text-gray-300">microservices
-                  architecture</span> on <span className="font-bold text-gray-300">EKS</span> with HTTPS via <span className="font-bold text-gray-300">cert-manager</span> and Ingress.
+                <li className="">
+                  <span className="font-bold">Optimized Release Cycle:</span>{" "}
+                  Automated the entire delivery chain, reducing deployment
+                  turnaround time by <span className="font-bold">50%</span>{" "}
+                  (from 40m to 20m) while adding comprehensive testing and
+                  security stages.
                 </li>
                 <li>
-                  Built automated <span className="font-bold text-gray-300">CI/CD pipelines</span> using GitLab CI/CD and <span className="font-bold text-gray-300">ArgoCD</span>,
-                  achieving <span className="font-bold text-gray-300">zero-downtime rolling updates</span>.
+                  <span className="font-bold">360°</span> Observability:
+                  Implemented the <span className="font-bold">"Grafana Alloy" & OpenTelemetry stack</span> to
+                  correlate metrics and logs, providing real-time performance
+                  monitoring and instant <span className="font-bold">Slack alerts</span> for node resource
+                  exhaustion.
                 </li>
                 <li>
-                  Integrated <span className="font-bold text-gray-300"></span>SonarQube for code quality checks and <span className="font-bold text-gray-300">Loki +
-                  Grafana</span> for centralized logging and observability.
+                  <span className="font-bold">Automated Compliance Gates:</span>{" "}
+                  Shifted security left by integrating{" "}
+                  <span className="font-bold">Trivy</span> (container scanning)
+                  and <span className="font-bold">Dependency Check</span>
+                  into the CI pipeline, automatically blocking builds with
+                  critical CVEs.
                 </li>
                 <li>
-                  Introduced <span className="font-bold text-gray-300">monitoring and alerting</span> using <span className="font-bold text-gray-300">Prometheus</span> and
-                  <span className="font-bold text-gray-300">Grafana</span>, improving incident response time by 30%.
+                  <span className="font-bold">Zero-Downtime Deployment:</span>{" "}
+                  Leveraged <span className="font-bold">ArgoCD</span> to manage
+                  state drift and ensure seamless application updates via
+                  GitOps.
                 </li>
               </ul>
             </div>
@@ -405,13 +446,19 @@ const Resume = () => {
               </p>
               <ul className="list-disc list-inside space-y-1 text-muted-foreground">
                 <li>
-                  Developed reusable <span className="font-bold text-gray-300">Terraform modules</span> for VPC, EC2, and RDS,
-                  used across development and production environments.prod
-                  environments.
+                  Developed reusable{" "}
+                  <span className="font-bold text-gray-300">
+                    Terraform modules
+                  </span>{" "}
+                  for VPC, EC2, and RDS, used across development and production
+                  environments.prod environments.
                 </li>
                 <li>
-                  Integrated automated <span className="font-bold text-gray-300">plan/apply pipelines</span> via GitLab CI/CD for
-                  infrastructure change control.
+                  Integrated automated{" "}
+                  <span className="font-bold text-gray-300">
+                    plan/apply pipelines
+                  </span>{" "}
+                  via GitLab CI/CD for infrastructure change control.
                 </li>
                 <li>
                   Improved provisioning consistency and reduced manual
@@ -429,10 +476,15 @@ const Resume = () => {
           <CardContent>
             <p className="text-muted-foreground">
               Blog published on{" "}
-              <a href="https://dev.to/cheulong" target="_blank" rel="noopener noreferrer" className="underline text-primary">
+              <a
+                href="https://dev.to/cheulong"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-primary"
+              >
                 dev.to
               </a>
-              &nbsp;(2500+ reads)
+              &nbsp;(3300+ reads)
             </p>
           </CardContent>
         </Card>
