@@ -6,6 +6,8 @@ import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import aksGitopsThumb from "@/assets/projects/aks-gitops-thumb.jpg";
 import playwrightThumb from "@/assets/projects/playwright-thumb.jpg";
 import moviesFinder from "@/assets/projects/movie-finder-poster.png";
+import image2_1 from "@/assets/projects/2/image.png";
+import image3_1 from "@/assets/projects/3/image.png";
 
 const Projects = () => {
   const projects = [
@@ -16,20 +18,57 @@ const Projects = () => {
       description:
         "Movies finder is a web application that allows users to search for movies and view details about them. The app is built using React.js, with data sourced from the TMDB API. The deployment is automated using a GitOps approach with ArgoCD and Helm on a bare-metal Kubernetes.",
       thumbnail: moviesFinder,
-      tags: ["argocd", "kubernetes", "docker", "gitlab ci/cd", "prometheus","grafana", "monitoring", "homelab", "ingress" , "helm"],
-
-
-      // details: {
-      //   architecture:
-      //     "The pipeline includes a GitHub Actions workflow that builds Docker images, pushes them to Docker Hub, and triggers an ArgoCD sync to deploy the latest version on AKS.",
-      //   tools: ["Docker", "Kubernetes", "ArgoCD", "Terraform", "Prometheus", "Grafana", "GitHub Actions"],
-      //   steps: ["Created app images", "Wrote Helm charts", "Set up ArgoCD pipeline"],
-      //   challenges:
-      //     "I initially faced an issue where ArgoCD couldn't sync due to missing CRDs. The fix was to use the argocd.argoproj.io/sync-wave annotation in Helm hooks.",
-      //   results: "GitHub repo + screenshots of ArgoCD sync & Grafana dashboards",
-      //   learning:
-      //     "This project taught me how GitOps simplifies deployments. Next, I plan to add Terraform to manage cluster infrastructure and integrate Prometheus for observability.",
-      // },
+      tags: [
+        "argocd",
+        "kubernetes",
+        "docker",
+        "gitlab ci/cd",
+        "prometheus",
+        "grafana",
+        "monitoring",
+        "homelab",
+        "ingress",
+        "helm",
+      ],
+    },
+    {
+      id: "monitoring-microservices-ecommerce-app",
+      title:
+        "Monitoring Microservices 3-tier e-commerce app on EKS with GitOps",
+      description:
+        "E-commerce app is a microservices-based web application that allows users to browse and purchase products online. The app is built using React.js for the frontend, Node.js with Express for the backend, and MongoDB for data storage. The deployment is automated using a GitOps approach with ArgoCD and Helm on AWS EKS. The monitoring stack includes Prometheus, Grafana, and Loki for comprehensive observability.",
+      thumbnail: image2_1,
+      tags: [
+        "argocd",
+        "kubernetes",
+        "docker",
+        "gitlab ci/cd",
+        "prometheus",
+        "grafana",
+        "monitoring",
+        "homelab",
+        "ingress",
+        "helm",
+      ],
+    },
+    {
+      id: "nextjs-inventory-management-dashboard-aws",
+      title:
+        "Nextjs Inventory Management Dashboard & Deploy on AWS",
+      description:
+        "Inventory Management Dashboard is a web application that helps businesses manage their inventory levels, orders, and suppliers. The app is built using Next.js for the frontend, Node.js with Express for the backend, and Postgres for data storage. The deployment leverages various AWS services to ensure scalability, reliability, and security.",
+      thumbnail: image3_1,
+      tags: [
+        "Postgres",
+        "Node",
+        "Tailwind",
+        "EC2",
+        "RDS",
+        "S3",
+        "AWS",
+        "Terraform",
+        "Ansible",
+      ],
     },
     // {
     //   id: "deploying-3-tier-project-management-aws-services",
@@ -69,7 +108,7 @@ const Projects = () => {
   ];
 
   // Semantic colors based on technology
-   const getTagColor = (tag: string) => {
+  const getTagColor = (tag: string) => {
     const colorMap: Record<string, string> = {
       // DevOps tools
       argocd:

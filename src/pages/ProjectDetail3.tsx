@@ -34,7 +34,7 @@ import code from "@/assets/projects/1/code.png";
 import code1 from "@/assets/projects/1/code1.png";
 import { useEffect, useState } from "react";
 
-const ProjectDetail1 = () => {
+const ProjectDetail3 = () => {
   const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
@@ -42,7 +42,6 @@ const ProjectDetail1 = () => {
       setShowButton(window.scrollY > 200); // show button after 200px scroll
     };
     window.scrollTo(0, 0);
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -172,7 +171,7 @@ const ProjectDetail1 = () => {
           <div className="space-y-8">
             <div className="animate-fade-in">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                End-to-End DevSecOps Project (Movies Finder)
+                Nextjs Inventory Management Dashboard & Deploy on AWS
               </h1>
               <div className="flex flex-wrap gap-2 mb-6">
                 {[
@@ -1292,4 +1291,4 @@ const ProjectDetail1 = () => {
   );
 };
 
-export default ProjectDetail1;
+export default ProjectDetail3;
