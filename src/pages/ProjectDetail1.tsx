@@ -435,10 +435,9 @@ const ProjectDetail1 = () => {
                     commits.
                   </li>
                   <li>
-                    <li>
-                    <span className="font-bold">Notify via Slack:</span> The pipeline sends notifications to a
-                    Slack channel about the build and deployment status.
-                  </li>
+                    <span className="font-bold">Notify via Slack:</span> The
+                    pipeline sends notifications to a Slack channel about the
+                    build and deployment status.
                   </li>
                 </ul>
                 <br />
@@ -506,7 +505,10 @@ const ProjectDetail1 = () => {
                 </p>
                 <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-3 list-disc list-inside">
                   {[
-                    ["GitLab CI/CD", "(Continuous Integration/Continuous Deployment)"],
+                    [
+                      "GitLab CI/CD",
+                      "(Continuous Integration/Continuous Deployment)",
+                    ],
                     ["ArgoCD", "(GitOps Continuous Delivery)"],
                     ["Release-it", "(Release automation)"],
                   ].map((tool) => (
