@@ -331,7 +331,10 @@ const ProjectDetail2 = () => {
                       Comprehensive Observability:
                     </span>{" "}
                     Implemented a full-stack observability solution using
-                    <span className="font-bold"> OpenTelemetry, Prometheus</span>
+                    <span className="font-bold">
+                      {" "}
+                      OpenTelemetry, Prometheus
+                    </span>
                     , and <span className="font-bold">Grafana</span> to monitor
                     application performance and infrastructure health in real
                     time.
@@ -430,9 +433,9 @@ const ProjectDetail2 = () => {
                 <p className="text-muted-foreground indent-6">
                   The application is hosted on a Kubernetes cluster deployed on
                   a baremetal Homelab environment.{" "}
-                  <span className="font-bold">Helm</span> is used as the
-                  package manager to define, install, and upgrade the
-                  application components. <span className="font-bold">ArgoCD</span>
+                  <span className="font-bold">Helm</span> is used as the package
+                  manager to define, install, and upgrade the application
+                  components. <span className="font-bold">ArgoCD</span>{" "}
                   implements GitOps principles, continuously synchronizing the
                   desired state defined in Git with the actual state in the
                   cluster.
@@ -444,38 +447,37 @@ const ProjectDetail2 = () => {
                 <br />
                 <ul className="text-muted-foreground list-disc list-inside leading-relaxed">
                   <li>
-                    Automated Testing: GitLab CI/CD pipelines are configured to
+                    <span className="font-bold">Automated Testing:</span> GitLab CI/CD pipelines are configured to
                     run unit tests (using Vitest) and end-to-end tests (using
-                    Playwright) to ensure code quality and
-                    functionality.
+                    Playwright) to ensure code quality and functionality.
                   </li>
                   <li>
-                    Security Scanning: The pipeline integrates security tools
+                    <span className="font-bold">Security Scanning:</span> The pipeline integrates security tools
                     like Trivy and OWASP ZAP to scan for vulnerabilities in the
                     application code and container images.
                   </li>
                   <li>
-                    Image Building & Tagging: Upon successful tests and scans,
+                    <span className="font-bold">Image Building & Tagging:</span> Upon successful tests and scans,
                     Docker images are built, tagged with semantic versioning,
                     and pushed to a container registry.
                   </li>
                   <li>
-                    GitOps Trigger: The pipeline updates the Helm chart values
+                    <span className="font-bold">GitOps Trigger:</span> The pipeline updates the Helm chart values
                     in the Git repository with the new image tag, triggering
                     ArgoCD to deploy the updated application.
                   </li>
                   <li>
-                    Release Automation: Release-it automates the release
+                    <span className="font-bold">Release Automation:</span> Release-it automates the release
                     process, managing version bumps and changelogs.
                   </li>
                   <li>
-                    Notify via Slack: The pipeline sends notifications to a
+                    <span className="font-bold">Notify via Slack:</span> The pipeline sends notifications to a
                     Slack channel about the build and deployment status.
                   </li>
                 </ul>
                 <br />
                 <h3 className="text-lg font-semibold flex text-center">
-                  3. Continuous Delivery & Resilience (ArgoCD) &nbsp;
+                  3. Deployment & Self-Healing (Kubernetes & ArgoCD) &nbsp;
                 </h3>
                 <p className="text-muted-foreground">
                   The deployment process is entirely automated:
@@ -502,21 +504,38 @@ const ProjectDetail2 = () => {
                 />
                 <br />
                 <h3 className="text-lg font-semibold flex text-center">
-                  4. Observability Stack &nbsp;
+                  4. Observability & Monitoring (OpenTelemetry, Prometheus,
+                  Grafana, Alertmanager, Slack) &nbsp;
                 </h3>
                 <br />
                 <p className="text-muted-foreground">
-                  The platform includes{" "}
-                  <span className="font-bold">full-stack observability</span> to
-                  monitor the cluster and application health proactively.{" "}
-                  <span className="font-bold">OpenTelemetry</span>
-                  instruments the application for logs, with{" "}
-                  <span className="font-bold">Prometheus</span>
-                  collecting metrics and{" "}
-                  <span className="font-bold">Grafana</span> providing real-time
-                  visualization of the{" "}
-                  <span className="font-bold">"Golden Signals"</span> and
-                  hardware performance.
+                  <ul className="text-muted-foreground list-disc list-inside leading-relaxed">
+                    <li>
+                      <span className="font-bold">Metrics Collection:</span> The
+                      application and infrastructure emit metrics using
+                      OpenTelemetry, which are collected by Prometheus.
+                    </li>
+                    <li>
+                      <span className="font-bold">Visualization:</span> Grafana
+                      is used to create dashboards for visualizing application
+                      performance and infrastructure health.
+                    </li>
+                    <li>
+                      <span className="font-bold">Alerting:</span> Alertmanager
+                      is configured to send alerts to Slack based on predefined
+                      thresholds, enabling proactive issue resolution.
+                    </li>
+                    <li>
+                      <span className="font-bold">Tracing & Logging:</span>{" "}
+                      OpenTelemetry also provides distributed tracing and
+                      logging capabilities, helping to diagnose performance
+                      bottlenecks and errors.
+                    </li>
+                    <li>
+                      <span className="font-bold">Grafana Alloy</span> is used as an OpenTelemetry Collector to
+                      aggregate and export telemetry data to various backends.
+                    </li>
+                  </ul>
                 </p>
               </div>
             </Card>
