@@ -12,26 +12,8 @@ import {
 import { Separator } from "@/components/ui/separator";
 import moviesFinder from "@/assets/projects/movies-finder.gif";
 import moviesFinderDiagram from "@/assets/projects/movies-finder-diagram.png";
-import image1 from "@/assets/projects/1/image1.png";
-import image2_1 from "@/assets/projects/2/image.png";
-import image1_0 from "@/assets/projects/1/image.png";
-import image1_2 from "@/assets/projects/1/image2.png";
-import image1_3 from "@/assets/projects/1/image3.png";
-import image1_4 from "@/assets/projects/1/image4.png";
-import image1_5 from "@/assets/projects/1/image5.png";
-import image1_6 from "@/assets/projects/1/image6.png";
-import image1_7 from "@/assets/projects/1/image7.png";
-import image1_8 from "@/assets/projects/1/image8.png";
-import image1_9 from "@/assets/projects/1/image9.png";
-import image1_10 from "@/assets/projects/1/image10.png";
-import image1_11 from "@/assets/projects/1/image11.png";
-import image1_12 from "@/assets/projects/1/image12.png";
-import image1_13 from "@/assets/projects/1/image13.png";
-import image1_14 from "@/assets/projects/1/image14.png";
-import image1_15 from "@/assets/projects/1/image15.png";
-import image1_16 from "@/assets/projects/1/image16.png";
-import code from "@/assets/projects/1/code.png";
-import code1 from "@/assets/projects/1/code1.png";
+import image2 from "@/assets/projects/2/image.png";
+
 import { useEffect, useState } from "react";
 
 const ProjectDetail2 = () => {
@@ -41,7 +23,7 @@ const ProjectDetail2 = () => {
     const handleScroll = () => {
       setShowButton(window.scrollY > 200); // show button after 200px scroll
     };
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -119,6 +101,33 @@ const ProjectDetail2 = () => {
       monitoring:
         "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
       helm: "bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 border-indigo-600/30",
+      nextjs:
+        "bg-slate-600/20 text-slate-700 dark:text-slate-300 border-slate-600/30",
+      vitest:
+        "bg-lime-600/20 text-lime-700 dark:text-lime-300 border-lime-600/30",
+      playwright:
+        "bg-emerald-600/20 text-emerald-700 dark:text-emerald-300 border-emerald-600/30",
+      express:
+        "bg-neutral-600/20 text-neutral-700 dark:text-neutral-300 border-neutral-600/30",
+      typescript:
+        "bg-blue-600/20 text-blue-700 dark:text-blue-300 border-blue-600/30",
+      postgres:
+        "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
+      nodejs:
+        "bg-green-600/20 text-green-700 dark:text-green-300 border-green-600/30",
+      tailwind:
+        "bg-cyan-600/20 text-cyan-700 dark:text-cyan-300 border-cyan-600/30",
+      reactjs: "bg-sky-500/20 text-sky-600 dark:text-sky-300 border-sky-500/30",
+      javascript:
+        "bg-yellow-500/20 text-yellow-700 dark:text-yellow-300 border-yellow-500/30",
+      ec2: "bg-amber-600/20 text-amber-700 dark:text-amber-300 border-amber-600/30",
+      rds: "bg-indigo-600/20 text-indigo-700 dark:text-indigo-300 border-indigo-600/30",
+      s3: "bg-orange-500/20 text-orange-700 dark:text-orange-300 border-orange-500/30",
+      ansible: "bg-red-600/20 text-red-700 dark:text-red-300 border-red-600/30",
+      postgresql:
+        "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
+      mongodb:
+        "bg-green-600/20 text-green-700 dark:text-green-300 border-green-600/30",
     };
 
     return (
@@ -171,7 +180,8 @@ const ProjectDetail2 = () => {
           <div className="space-y-8">
             <div className="animate-fade-in">
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Monitoring Microservices 3-tier e-commerce app on EKS with GitOps
+                Monitoring Microservices 3-tier e-commerce app on EKS with
+                GitOps
               </h1>
               <div className="flex flex-wrap gap-2 mb-6">
                 {[
@@ -185,11 +195,18 @@ const ProjectDetail2 = () => {
                   "homelab",
                   "ingress",
                   "helm",
+                  "nodejs",
+                  "nextjs",
+                  "tailwind",
+                  "typescript",
+                  "expressjs",
+                  "postgresql",
+                  "mongodb",
                 ].map((tag) => (
                   <Badge
                     key={tag}
                     variant="outline"
-                    className={`text-muted-foreground transition-colors ${getTagColor(
+                    className={`text-muted-foreground transition-colors capitalize ${getTagColor(
                       tag
                     )}`}
                   >
@@ -199,20 +216,23 @@ const ProjectDetail2 = () => {
               </div>
               <div className="flex gap-4">
                 <Button
-                  asChild
+                  disabled
+                  // asChild
                   className="text-white bg-blue-500  hover:shadow-glow transition-all"
                 >
                   <a
                     href="https://gitlab.com/cheulong-devops/movies-finder"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="flex"
                   >
                     <Gitlab className="mr-2" size={18} />
                     View on GitLab
                   </a>
                 </Button>
                 <Button
-                  asChild
+                  disabled
+                  // asChild
                   variant="outline"
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                 >
@@ -220,6 +240,7 @@ const ProjectDetail2 = () => {
                     href="https://movies-finder-frontend.vercel.app"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="flex"
                   >
                     <ExternalLink className="mr-2" size={18} />
                     Live Demo
@@ -232,7 +253,7 @@ const ProjectDetail2 = () => {
               <div className="relative w-full max-w-xl mx-auto">
                 <div className="absolute inset-0 bg-gradient-primary rounded-2xl blur-3xl opacity-30 animate-glow" />
                 <img
-                  src={moviesFinder}
+                  src={image2}
                   alt="Cheulong Sear"
                   className="relative rounded-2xl shadow-card border border-border w-full"
                 />
@@ -241,31 +262,31 @@ const ProjectDetail2 = () => {
             {/* ================================
           ======= Overview ====== 
           ====================================*/}
-            {/* <Card
+            <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.1s" }}
             >
               <h2 className="text-2xl font-bold mb-4">Overview</h2>
               <p className="font-bold leading-relaxed">
-                Project: End-to-End DevSecOps Project (Movies Finder)
+                Project: Monitoring Microservices 3-tier e-commerce app on EKS
+                with GitOps
               </p>
               <br />
               <p className="text-muted-foreground leading-relaxed">
-                <span className="font-bold"> Overview</span> While the visible
-                application is a React-based Movie Finder (consuming TMDB API),
-                this project serves as a comprehensive proof-of-concept for a
-                production-grade DevSecOps lifecycle. It demonstrates the
-                automated delivery of a secure, tested, and monitored web
-                application onto a baremetal Kubernetes cluster using GitOps
-                principles.
+                <span className="font-bold"> Overview</span> This project
+                showcases the design and implementation of a comprehensive CI/CD
+                pipeline for a microservices-based e-commerce application hosted
+                on a Kubernetes cluster using GitOps principles. The pipeline
+                integrates advanced monitoring, security, and automated testing
+                to ensure robust and reliable deployments.
               </p>
               <br />
               <p className="text-muted-foreground leading-relaxed">
-                <span className="font-bold">Goal</span> To architect a
-                "Zero-Touch" delivery pipeline that automates the build,
-                testing, security scanning, and deployment processes, ensuring
-                that only high-quality, secure code reaches production without
-                manual intervention.
+                <span className="font-bold">Goal</span> The primary goal of this
+                project is to establish a fully automated CI/CD pipeline that
+                enhances deployment efficiency, ensures application stability,
+                and provides end-to-end observability for a microservices-based
+                e-commerce application.
               </p>
               <br />
               <p className="text-muted-foreground">
@@ -299,39 +320,55 @@ const ProjectDetail2 = () => {
                 <span className="font-bold">Key Results & Achievements</span>
                 <ul className="list-disc list-inside">
                   <li className="">
-                    <span className="font-bold">Optimized Release Cycle:</span>{" "}
-                    Automated the entire delivery chain, reducing deployment
-                    turnaround time by <span className="font-bold">50%</span>{" "}
-                    (from 40m to 20m) while adding comprehensive testing and
-                    security stages.
-                  </li>
-                  <li>
-                    <span className="font-bold">360°</span> Observability:
-                    Implemented the "Grafana Alloy" & OpenTelemetry stack to
-                    correlate metrics and logs, providing real-time performance
-                    monitoring and instant Slack alerts for node resource
-                    exhaustion.
+                    <span className="font-bold">Robust CI/CD Pipeline:</span>{" "}
+                    Established a fully automated CI/CD pipeline using GitLab
+                    CI/CD and ArgoCD, enabling seamless application deployment
+                    and updates with{" "}
+                    <span className="font-bold">zero downtime</span>.
                   </li>
                   <li>
                     <span className="font-bold">
-                      Automated Compliance Gates:
+                      Comprehensive Observability:
                     </span>{" "}
-                    Shifted security left by integrating{" "}
-                    <span className="font-bold">Trivy</span> (container
-                    scanning) and{" "}
-                    <span className="font-bold">Dependency Check</span>
-                    into the CI pipeline, automatically blocking builds with
-                    critical CVEs.
+                    Implemented a full-stack observability solution using
+                    <span className="font-bold"> OpenTelemetry, Prometheus</span>
+                    , and <span className="font-bold">Grafana</span> to monitor
+                    application performance and infrastructure health in real
+                    time.
                   </li>
                   <li>
-                    <span className="font-bold">Zero-Downtime Deployment:</span>{" "}
-                    Leveraged <span className="font-bold">ArgoCD</span> to
-                    manage state drift and ensure seamless application updates
-                    via GitOps.
+                    <span className="font-bold">
+                      Enhanced Security Posture:
+                    </span>{" "}
+                    Integrated DevSecOps practices into the CI/CD pipeline,
+                    utilizing tools like{" "}
+                    <span className="font-bold">Trivy, OWASP ZAP,</span> and{" "}
+                    <span className="font-bold">Gitleaks</span> to identify and
+                    mitigate security vulnerabilities early in the development
+                    lifecycle.
+                  </li>
+                  <li>
+                    <span className="font-bold">
+                      Automated Testing Framework:
+                    </span>{" "}
+                    Developed an automated testing framework using{" "}
+                    <span className="font-bold">Playwright</span> and{" "}
+                    <span className="font-bold">Vitest</span>, ensuring high
+                    code quality and reliability through rigorous unit and
+                    end-to-end testing.
+                  </li>
+                  <li>
+                    <span className="font-bold">GitOps Implementation:</span>{" "}
+                    Leveraged GitOps principles with ArgoCD to manage
+                    infrastructure and application configurations, ensuring a
+                    single <span className="font-bold">source of truth</span>
+                    and enabling easy{" "}
+                    <span className="font-bold">rollbacks</span> and{" "}
+                    <span className="font-bold">versioning</span>.
                   </li>
                 </ul>
               </p>
-            </Card> */}
+            </Card>
             {/* ================================
           ======= Agenda ====== 
           ====================================*/}
@@ -370,62 +407,70 @@ const ProjectDetail2 = () => {
             {/* ================================
           ======= Architecture Overview ====== 
           ====================================*/}
-            {/* <Card
+            <Card
               className="p-8 bg-card border-border animate-fade-in leading-relaxed"
               style={{ animationDelay: "0.2s" }}
               id="architecture"
             >
               <h2 className="text-2xl font-bold mb-4">Architecture Overview</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                This solution is designed as a Declarative DevOps Platform
-                operating under a GitOps paradigm, ensuring a single source of
-                truth for both application code and infrastructure
-                configuration.
+              <p className="text-muted-foreground leading-relaxed indent-6">
+                The architecture of this project is designed to support a
+                microservices-based e-commerce application deployed on a
+                Kubernetes cluster using GitOps principles. The architecture
+                consists of several key components that work together to ensure
+                seamless deployment, monitoring, and management of the
+                application.
               </p>
               <br />
               <div className="flex flex-col flex-wrap align-items-center">
                 <h3 className="text-lg font-semibold flex text-center">
-                  1. Infrastructure & Control Plane (The Foundation) &nbsp;
+                  1. Infrastructure & GitOps (Kubernetes, ArgoCD, Helm) &nbsp;
                 </h3>
                 <br />
                 <p className="text-muted-foreground indent-6">
-                  The application is deployed to a bare-metal Kubernetes
-                  cluster. The configuration repository serves as the Single
-                  Source of Truth for all cluster state, managed and enforced by
-                  ArgoCD. This pull-based mechanism guarantees immutability and
-                  eliminates configuration drift. Helm charts abstract the
-                  Kubernetes manifests, providing templated flexibility for
-                  deploying the application across various lifecycle
-                  environments.
+                  The application is hosted on a Kubernetes cluster deployed on
+                  a baremetal Homelab environment.{" "}
+                  <span className="font-bold">Helm</span> is used as the
+                  package manager to define, install, and upgrade the
+                  application components. <span className="font-bold">ArgoCD</span>
+                  implements GitOps principles, continuously synchronizing the
+                  desired state defined in Git with the actual state in the
+                  cluster.
                 </p>
                 <br />
                 <h3 className="text-lg font-semibold flex text-center">
-                  2. Continuous Integration (GitLab CI) &nbsp;
+                  2. Continuous Integration (GitLab CI/CD) &nbsp;
                 </h3>
                 <br />
                 <ul className="text-muted-foreground list-disc list-inside leading-relaxed">
                   <li>
-                    <span className="font-bold">Testing Gates:</span> Runs unit
-                    tests <span className="font-bold">(Vitest)</span> and
-                    end-to-end tests
-                    <span className="font-bold">(Playwright)</span>.
+                    Automated Testing: GitLab CI/CD pipelines are configured to
+                    run unit tests (using Vitest) and end-to-end tests (using
+                    Playwright) to ensure code quality and
+                    functionality.
                   </li>
                   <li>
-                    <span className="font-bold">Code Quality:</span> Static
-                    Analysis (SAST) and{" "}
-                    <span className="font-bold">Gitleaks</span> check for
-                    secrets and vulnerabilities.
+                    Security Scanning: The pipeline integrates security tools
+                    like Trivy and OWASP ZAP to scan for vulnerabilities in the
+                    application code and container images.
                   </li>
                   <li>
-                    <span className="font-bold">Security Gates:</span> Uses{" "}
-                    <span className="font-bold">Trivy</span> to scan the built
-                    Docker image for CVEs and{" "}
-                    <span className="font-bold">Syft</span> to generate an SBOM.
+                    Image Building & Tagging: Upon successful tests and scans,
+                    Docker images are built, tagged with semantic versioning,
+                    and pushed to a container registry.
                   </li>
                   <li>
-                    <span className="font-bold">Artifact Flow:</span> Upon
-                    successful build, the immutable Docker image is tagged and
-                    pushed to the registry, triggering the deployment phase.
+                    GitOps Trigger: The pipeline updates the Helm chart values
+                    in the Git repository with the new image tag, triggering
+                    ArgoCD to deploy the updated application.
+                  </li>
+                  <li>
+                    Release Automation: Release-it automates the release
+                    process, managing version bumps and changelogs.
+                  </li>
+                  <li>
+                    Notify via Slack: The pipeline sends notifications to a
+                    Slack channel about the build and deployment status.
                   </li>
                 </ul>
                 <br />
@@ -474,7 +519,7 @@ const ProjectDetail2 = () => {
                   hardware performance.
                 </p>
               </div>
-            </Card> */}
+            </Card>
             {/* ================================
           ======= Technologies Used ====== 
           ====================================*/}

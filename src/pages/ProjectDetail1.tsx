@@ -190,7 +190,7 @@ const ProjectDetail1 = () => {
                   <Badge
                     key={tag}
                     variant="outline"
-                    className={`text-muted-foreground transition-colors ${getTagColor(
+                    className={`text-muted-foreground transition-colors capitalize ${getTagColor(
                       tag
                     )}`}
                   >
@@ -428,6 +428,18 @@ const ProjectDetail1 = () => {
                     successful build, the immutable Docker image is tagged and
                     pushed to the registry, triggering the deployment phase.
                   </li>
+                  <li>
+                    <span className="font-bold">Release Automation:</span>{" "}
+                    <span className="font-bold">Release-it</span> automates
+                    versioning and changelog generation based on conventional
+                    commits.
+                  </li>
+                  <li>
+                    <li>
+                    <span className="font-bold">Notify via Slack:</span> The pipeline sends notifications to a
+                    Slack channel about the build and deployment status.
+                  </li>
+                  </li>
                 </ul>
                 <br />
                 <h3 className="text-lg font-semibold flex text-center">
@@ -494,8 +506,8 @@ const ProjectDetail1 = () => {
                 </p>
                 <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-3 list-disc list-inside">
                   {[
-                    ["GitLab CI/CD", "(Infrastructure as Code)"],
-                    ["ArgoCD", "(Container Orchestration)"],
+                    ["GitLab CI/CD", "(Continuous Integration/Continuous Deployment)"],
+                    ["ArgoCD", "(GitOps Continuous Delivery)"],
                     ["Release-it", "(Release automation)"],
                   ].map((tool) => (
                     <li className="font-bold">
@@ -555,33 +567,6 @@ const ProjectDetail1 = () => {
                       "Slack",
                       "(Used here as a notification channel for alerts)",
                     ],
-                  ].map((tool) => (
-                    <li className="font-bold">
-                      {tool[0]} <span className="font-normal">{tool[1]}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <br />
-              <div className="flex flex-col flex-wrap align-items-center">
-                <h3 className="text-lg font-semibold flex text-center">
-                  Security (DevSecOps) & SBOM (Software Bill of
-                  Materials):&nbsp;
-                </h3>
-                <p className="text-muted-foreground text-md font-light italic">
-                  Tools for scanning, vulnerability management, and supply chain
-                  security.
-                </p>
-                <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
-                  {[
-                    ["SonarCloud", "(Code quality & security scanning)"],
-                    ["Trivy", "(Container scanning)"],
-                    ["Grype", "(Vulnerability scanner)"],
-                    ["Syft", "(Generating Software Bill of Materials)"],
-                    ["OWASP ZAP", "(Web app security scanner)"],
-                    ["Gitleaks", "(Detecting hardcoded secrets)"],
-                    ["Sealed-Secrets", "(Managing secrets in Kubernetes)"],
-                    ["Dependency Check", "(Scanning dependencies)"],
                   ].map((tool) => (
                     <li className="font-bold">
                       {tool[0]} <span className="font-normal">{tool[1]}</span>
