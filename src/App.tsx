@@ -10,6 +10,8 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import ProjectDetail1 from "./pages/ProjectDetail1";
+import ProjectDetail2 from "./pages/ProjectDetail2";
+import ProjectDetail3 from "./pages/ProjectDetail3";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Resume from "./pages/Resume";
@@ -32,6 +34,8 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/projects/deploying-movies-finder" element={<ProjectDetail1 />} />
+            <Route path="/projects/monitoring-microservices-ecommerce-app" element={<ProjectDetail2 />} />
+            <Route path="/projects/nextjs-inventory-management-dashboard-aws" element={<ProjectDetail3 />} />
             <Route path="/projects/:id" element={<ProjectDetail />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
