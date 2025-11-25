@@ -792,7 +792,8 @@ const ProjectDetail1 = () => {
                   />
                 </div>
                 <p className="text-muted-foreground text-md font-light italic mt-2">
-                  Note: This pipeline still can be optimized and improved over time.
+                  Note: This pipeline still can be optimized and improved over
+                  time.
                 </p>
                 <br />
                 <h3 className="text-lg font-semibold mb-2">
@@ -810,8 +811,8 @@ const ProjectDetail1 = () => {
                   </li>
                   <li>
                     Implemented <span className="font-bold">Sync Waves</span> to
-                    ensure the secrets are ready before the
-                    frontend pods launch.
+                    ensure the secrets are ready before the frontend pods
+                    launch.
                   </li>
                 </ul>
                 <img
@@ -840,9 +841,11 @@ const ProjectDetail1 = () => {
                     Helm.
                   </li>
                   <li>
-                    Configured <span className="font-bold">Grafana Alloy
-                    (OpenTelemetry Collector)</span> to scrape metrics from the
-                    application and cluster nodes.
+                    Configured{" "}
+                    <span className="font-bold">
+                      Grafana Alloy (OpenTelemetry Collector)
+                    </span>{" "}
+                    to scrape metrics from the application and cluster nodes.
                   </li>
                   <li>
                     Set up <span className="font-bold">Alertmanager</span> to
@@ -851,8 +854,10 @@ const ProjectDetail1 = () => {
                   </li>
                   <li>
                     Custom Grafana dashboards display{" "}
-                    <span className="font-bold">"Golden Signals"
-                    (Latency, Traffic, Errors, Saturation)</span>.
+                    <span className="font-bold">
+                      "Golden Signals" (Latency, Traffic, Errors, Saturation)
+                    </span>
+                    .
                   </li>
                 </ul>
               </div>
@@ -991,7 +996,7 @@ const ProjectDetail1 = () => {
                     </li>
                     <li>
                       <span className="font-bold">Runtime:</span> Kubernetes
-                      secrets are managed via GitOps using 
+                      secrets are managed via GitOps using
                       <span className="font-bold"> Sealed-Secrets</span>,
                       ensuring encryption at rest and safe storage in the git
                       repository.
@@ -1049,9 +1054,7 @@ const ProjectDetail1 = () => {
               style={{ animationDelay: "0.5s" }}
               id="Challenges"
             >
-              <h2 className="text-2xl font-bold">
-                Challenges & Solutions
-              </h2>
+              <h2 className="text-2xl font-bold">Challenges & Solutions</h2>
               <ul className="text-muted-foreground leading-relaxed flex flex-col flex-wrap gap-1 align-items-center list-disc list-inside">
                 <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                   {/* <li>
@@ -1077,6 +1080,26 @@ const ProjectDetail1 = () => {
                       </li>
                     </ul>
                   </li> */}
+                  <li>
+                    <span className="font-bold">
+                      Challenge: The "Secret Zero" Problem in GitOps
+                    </span>
+                    <ul className="list-disc list-inside ml-6">
+                      <li>
+                        <span className="font-bold">The Issue:</span> Trying to
+                        scrape metrics from the React frontend clusterIP service
+                        using Prometheus was failing because the service was not
+                        exposing the necessary endpoints.
+                      </li>
+                      <li>
+                        <span className="font-bold">The Solution:</span> I Using{" "}
+                        <span className="font-bold">Blackbox Exporter</span> to
+                        probe the frontend service via HTTP endpoints. This
+                        allowed Prometheus to scrape metrics externally without
+                        needing direct access to the clusterIP service.
+                      </li>
+                    </ul>
+                  </li>
                   <li>
                     <span className="font-bold">
                       Challenge: The "Secret Zero" Problem in GitOps
@@ -1238,7 +1261,9 @@ const ProjectDetail1 = () => {
                 <h3 className="text-lg font-semibold mb-2">
                   Environment Configuration
                 </h3>
-                <p className="text-muted-foreground">You will need a TMDB API Key to fetch movie data.</p>
+                <p className="text-muted-foreground">
+                  You will need a TMDB API Key to fetch movie data.
+                </p>
                 <br />
                 <div className="block">
                   <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
@@ -1252,7 +1277,9 @@ const ProjectDetail1 = () => {
                   </pre>
                 </div>
                 <br />
-                <p className="leading-relaxed text-muted-foreground">Clean up</p>
+                <p className="leading-relaxed text-muted-foreground">
+                  Clean up
+                </p>
                 <div className="block">
                   <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
                     <code className="language-javascript">

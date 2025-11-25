@@ -241,7 +241,7 @@ const ProjectDetail2 = () => {
             {/* ================================
           ======= Overview ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.1s" }}
             >
@@ -331,7 +331,7 @@ const ProjectDetail2 = () => {
                   </li>
                 </ul>
               </p>
-            </Card>
+            </Card> */}
             {/* ================================
           ======= Agenda ====== 
           ====================================*/}
@@ -370,7 +370,7 @@ const ProjectDetail2 = () => {
             {/* ================================
           ======= Architecture Overview ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in leading-relaxed"
               style={{ animationDelay: "0.2s" }}
               id="architecture"
@@ -474,11 +474,11 @@ const ProjectDetail2 = () => {
                   hardware performance.
                 </p>
               </div>
-            </Card>
+            </Card> */}
             {/* ================================
           ======= Technologies Used ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.3s" }}
               id="technologies"
@@ -676,11 +676,11 @@ const ProjectDetail2 = () => {
                   ))}
                 </ul>
               </div>
-            </Card>
+            </Card> */}
             {/* ================================
           ======= Implementation Journey ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in leading-relaxed"
               style={{ animationDelay: "0.4s" }}
               id="ImplementationJourney"
@@ -855,11 +855,11 @@ const ProjectDetail2 = () => {
                   </li>
                 </ul>
               </div>
-            </Card>
+            </Card> */}
             {/* ================================
           ======= Observability & Monitoring ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Observability"
@@ -956,11 +956,11 @@ const ProjectDetail2 = () => {
                 alt={image1_4}
                 className="mt-1 shadow-card max-w-2xl ml-6"
               />
-            </Card>
+            </Card> */}
             {/* ================================
           ======= Security & DevSecOps ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Security"
@@ -1039,11 +1039,11 @@ const ProjectDetail2 = () => {
                   </ul>
                 </li>
               </ul>
-            </Card>
+            </Card> */}
             {/* ================================
           ======= Challenges & Solutions ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Challenges"
@@ -1053,29 +1053,6 @@ const ProjectDetail2 = () => {
               </h2>
               <ul className="text-muted-foreground leading-relaxed flex flex-col flex-wrap gap-1 align-items-center list-disc list-inside">
                 <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
-                  {/* <li>
-                    <span className="font-bold">
-                      Challenge: Resource Dependency & Race Conditions
-                    </span>
-                    <ul className="list-disc list-inside ml-6">
-                      <li>
-                        <span className="font-bold">The Issue:</span> During the
-                        initial ArgoCD rollout, the application failed to sync
-                        because certain Custom Resource Definitions (CRDs) were
-                        not yet available when dependent resources tried to
-                        initialize.
-                      </li>
-                      <li>
-                        <span className="font-bold">The Solution:</span> I
-                        leveraged{" "}
-                        <span className="font-bold">ArgoCD Sync Waves</span>
-                        (argocd.argoproj.io/sync-wave) and Helm Hooks to enforce
-                        a strict deployment order. This ensured that CRDs and
-                        infrastructure prerequisites were fully established
-                        before the application workload was applied.
-                      </li>
-                    </ul>
-                  </li> */}
                   <li>
                     <span className="font-bold">
                       Challenge: The "Secret Zero" Problem in GitOps
@@ -1101,11 +1078,11 @@ const ProjectDetail2 = () => {
                   </li>
                 </ul>
               </ul>
-            </Card>
+            </Card> */}
             {/* ================================
           ======= Results & Impact ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Results"
@@ -1139,11 +1116,11 @@ const ProjectDetail2 = () => {
                   maintains service availability during rolling updates.
                 </li>
               </ul>
-            </Card>
+            </Card> */}
             {/* ================================
           ======= Key Learnings ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Key"
@@ -1177,11 +1154,11 @@ const ProjectDetail2 = () => {
                   that it is failing.
                 </li>
               </ul>
-            </Card>
+            </Card> */}
             {/* ================================
           ======= Future Improvements ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Future"
@@ -1209,11 +1186,11 @@ const ProjectDetail2 = () => {
                   alerting.
                 </li>
               </ul>
-            </Card>
+            </Card> */}
             {/* ================================
           ======= Getting Started & Installation  ====== 
           ====================================*/}
-            <Card
+            {/* <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="installation"
@@ -1283,7 +1260,7 @@ const ProjectDetail2 = () => {
                   </pre>
                 </div>
               </div>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </div>
