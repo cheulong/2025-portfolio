@@ -128,6 +128,7 @@ const ProjectDetail2 = () => {
         "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
       mongodb:
         "bg-green-600/20 text-green-700 dark:text-green-300 border-green-600/30",
+        turborepo: "bg-red-600/20 text-red-700 dark:text-red-300 border-red-600/30"
     };
 
     return (
@@ -202,6 +203,7 @@ const ProjectDetail2 = () => {
                   "expressjs",
                   "postgresql",
                   "mongodb",
+                  "turborepo"
                 ].map((tag) => (
                   <Badge
                     key={tag}
@@ -278,7 +280,10 @@ const ProjectDetail2 = () => {
                 pipeline for a microservices-based e-commerce application hosted
                 on a Kubernetes cluster using GitOps principles. The pipeline
                 integrates advanced monitoring, security, and automated testing
-                to ensure robust and reliable deployments.
+                to ensure robust and reliable deployments. Using Turborepo 
+                for monorepo management, the project demonstrates best practices
+                in modern DevOps, including infrastructure as code, continuous
+                integration, and continuous deployment.
               </p>
               <br />
               <p className="text-muted-foreground leading-relaxed">
@@ -319,6 +324,12 @@ const ProjectDetail2 = () => {
               <p className="text-muted-foreground">
                 <span className="font-bold">Key Results & Achievements</span>
                 <ul className="list-disc list-inside">
+                  <li>
+                    <span className="font-bold">Monorepo:</span>{" "}
+                    Implemented <span className="font-bold">Turborepo</span> to manage the frontend and backend
+                    applications in a single repository, streamlining development
+                    and deployment processes.
+                  </li>
                   <li className="">
                     <span className="font-bold">Robust CI/CD Pipeline:</span>{" "}
                     Established a fully automated CI/CD pipeline using GitLab
@@ -427,18 +438,14 @@ const ProjectDetail2 = () => {
               <br />
               <div className="flex flex-col flex-wrap align-items-center">
                 <h3 className="text-lg font-semibold flex text-center">
-                  1. Infrastructure & GitOps (Kubernetes, ArgoCD, Helm) &nbsp;
+                  1. Monorepo Management (Turborepo) &nbsp;
                 </h3>
                 <br />
                 <p className="text-muted-foreground indent-6">
-                  The application is hosted on a Kubernetes cluster deployed on
-                  a baremetal Homelab environment.{" "}
-                  <span className="font-bold">Helm</span> is used as the package
-                  manager to define, install, and upgrade the application
-                  components. <span className="font-bold">ArgoCD</span>{" "}
-                  implements GitOps principles, continuously synchronizing the
-                  desired state defined in Git with the actual state in the
-                  cluster.
+                  The project utilizes <span className="font-bold">Turborepo</span> to manage both the frontend and backend
+                  applications within a single monorepo. This approach streamlines
+                  development and deployment processes by allowing shared
+                  configurations, dependencies, and scripts across services.
                 </p>
                 <br />
                 <h3 className="text-lg font-semibold flex text-center">

@@ -11,9 +11,11 @@ import {
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import moviesFinder from "@/assets/projects/movies-finder.gif";
-import moviesFinderDiagram from "@/assets/projects/movies-finder-diagram.png";
+import diagram from "@/assets/projects/3/diagram.png";
 import image3 from "@/assets/projects/3/image.png";
 import image3_1 from "@/assets/projects/3/image1.png";
+import image3_2 from "@/assets/projects/3/image2.png";
+import gitlab from "@/assets/projects/3/gitlab.png";
 
 import { useEffect, useState } from "react";
 
@@ -212,12 +214,11 @@ const ProjectDetail3 = () => {
               </div>
               <div className="flex gap-4">
                 <Button
-                  disabled
                   // asChild
                   className="text-white bg-blue-500  hover:shadow-glow transition-all"
                 >
                   <a
-                    href="https://gitlab.com/cheulong-devops/movies-finder"
+                    href="https://gitlab.com/cheulong-devops/inventory-management-dashboard"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex"
@@ -226,7 +227,7 @@ const ProjectDetail3 = () => {
                     View on GitLab
                   </a>
                 </Button>
-                <Button
+                {/* <Button
                   disabled
                   // asChild
                   variant="outline"
@@ -241,7 +242,7 @@ const ProjectDetail3 = () => {
                     <ExternalLink className="mr-2" size={18} />
                     Live Demo
                   </a>
-                </Button>
+                </Button> */}
               </div>
             </div>
 
@@ -271,8 +272,8 @@ const ProjectDetail3 = () => {
                 <span className="font-bold"> Overview</span> This project
                 involves developing a full-featured Inventory Management
                 Dashboard using Next.js for the frontend and Express.js for the
-                backend API. The application is designed to streamline inventory
-                tracking, management, and reporting for businesses. The entire
+                backend API. The application is designed to show the data of
+                inventory items, manage stock levels, suppliers. The entire
                 solution is deployed on AWS using Amplify for hosting frontend
                 EC2 for hosting the application servers and RDS for the
                 PostgreSQL database, ensuring scalability, reliability, and
@@ -283,10 +284,9 @@ const ProjectDetail3 = () => {
                 <span className="font-bold">Goal</span> The primary goal of this
                 project is to create a robust and user-friendly inventory
                 management system that allows businesses to efficiently track
-                their stock levels, manage suppliers, and generate insightful
-                reports. Additionally, deploying the application on AWS aims to
-                leverage cloud infrastructure for high availability and
-                performance.
+                their stock levels, manage suppliers. Additionally, deploying
+                the application on AWS aims to leverage cloud infrastructure for
+                high availability and performance.
               </p>
               <br />
               <p className="text-muted-foreground">
@@ -298,16 +298,16 @@ const ProjectDetail3 = () => {
                   </li>
                   <li>
                     <span className="font-bold">CI/CD & Release:</span> GitLab
-                    CI/CD, Release-it, Commitizen, Husky, Lint-Staged
+                    CI/CD, Commitizen, Husky, Lint-Staged
                   </li>
                   <li>
                     <span className="font-bold">Observability Stack:</span> AWS
                     CloudWatch
                   </li>
-                  <li>
+                  {/* <li>
                     <span className="font-bold">Security (DevSecOps):</span>{" "}
                     Trivy, OWASP ZAP, Gitleaks, Syft (SBOM)
-                  </li>
+                  </li> */}
                   <li>
                     <span className="font-bold">Testing & QA:</span> Playwright
                     (E2E), Vitest (Unit), SonarCloud
@@ -323,8 +323,7 @@ const ProjectDetail3 = () => {
                       Comprehensive Inventory Management:
                     </span>{" "}
                     Developed a full-featured dashboard with capabilities for
-                    tracking stock levels, managing suppliers, and generating
-                    reports.
+                    tracking stock levels, managing suppliers.
                   </li>
                   <li>
                     <span className="font-bold">Robust CI/CD Pipeline:</span>{" "}
@@ -338,14 +337,14 @@ const ProjectDetail3 = () => {
                     resources, ensuring reproducibility and version control of
                     the infrastructure.
                   </li>
-                  <li>
+                  {/* <li>
                     <span className="font-bold">
                       Enhanced Security Posture:
                     </span>{" "}
                     Integrated DevSecOps practices with tools like Trivy, OWASP
                     ZAP, and Gitleaks to ensure the application and
                     infrastructure are secure against vulnerabilities.
-                  </li>
+                  </li> */}
                 </ul>
               </p>
             </Card>
@@ -362,7 +361,7 @@ const ProjectDetail3 = () => {
                   ["Architecture Overview", "architecture"],
                   ["Technologies Used", "technologies"],
                   ["Implementation Journey", "ImplementationJourney"],
-                  ["Observability & Monitoring", "Observability"],
+                  // ["Observability & Monitoring", "Observability"],
                   ["Security & DevSecOps", "Security"],
                   ["Challenges & Solutions", "Challenges"],
                   ["Results & Impact", "Results"],
@@ -428,31 +427,40 @@ const ProjectDetail3 = () => {
                     </li>
                   </ul>
                   <img
-                    src={image3_1}
+                    src={diagram}
                     alt="Architecture Diagram"
                     className="mt-4 relative rounded-2xl shadow-card border border-border w-full"
                   />
                 </p>
                 <br />
                 <h3 className="text-lg font-semibold flex text-center">
-                  2. CI/CD Pipeline (GitLab CI/CD) &nbsp;
+                  2. Database model diagram
+                </h3>
+                <img
+                  src={image3_2}
+                  alt="Architecture Diagram"
+                  className="mt-4 relative rounded-2xl shadow-card border border-border w-full"
+                />
+                <br />
+                <h3 className="text-lg font-semibold flex text-center">
+                  3. CI/CD Pipeline (GitLab CI/CD) &nbsp;
                 </h3>
                 <br />
                 <ul className="text-muted-foreground list-disc list-inside leading-relaxed">
                   <li>
                     <span className="font-bold">Automated Testing:</span> The
                     CI/CD pipeline includes stages for running unit tests with
-                    <span className="font-bold">Vitest</span> and end-to-end
+                    <span className="font-bold"> Vitest</span> and end-to-end
                     tests with <span className="font-bold">Playwright</span> to
                     ensure code quality.
                   </li>
-                  <li>
+                  {/* <li>
                     <span className="font-bold">Security Scanning:</span> Tools
                     like <span className="font-bold">Trivy</span> and{" "}
                     <span className="font-bold">OWASP ZAP</span> are integrated
                     into the pipeline to scan for vulnerabilities in the code
                     and dependencies.
-                  </li>
+                  </li> */}
                   <li>
                     <span className="font-bold">Automated Deployment:</span> On
                     successful tests and scans, the pipeline automatically
@@ -460,16 +468,21 @@ const ProjectDetail3 = () => {
                     <span className="font-bold">AWS Amplify</span> and the
                     backend to the EC2 instance.
                   </li>
-                  <li>
+                  {/* <li>
                     <span className="font-bold">Release Management:</span> The
                     pipeline uses <span className="font-bold">Release-it</span>{" "}
                     for automated versioning and changelog generation based on
                     conventional commit messages.
-                  </li>
+                  </li> */}
                 </ul>
+                <img
+                  src={gitlab}
+                  alt="Architecture Diagram"
+                  className="mt-4 relative rounded-2xl shadow-card border border-border w-full"
+                />
                 <br />
                 <h3 className="text-lg font-semibold flex text-center">
-                  3. Automated Deployment & Configuration Management &nbsp;
+                  4. Automated Deployment & Configuration Management &nbsp;
                 </h3>
                 <br />
                 <ul className="text-muted-foreground list-disc list-inside leading-relaxed">
@@ -490,7 +503,7 @@ const ProjectDetail3 = () => {
 
                 <br />
                 <h3 className="text-lg font-semibold flex text-center">
-                  4. Observability & Monitoring &nbsp;
+                  5. Observability & Monitoring &nbsp;
                 </h3>
                 <br />
                 <p className="text-muted-foreground">
@@ -522,8 +535,11 @@ const ProjectDetail3 = () => {
                 </p>
                 <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-3 list-disc list-inside">
                   {[
-                    ["GitLab CI/CD", "(Continuous Integration/Continuous Deployment)"],
-                    ["Release-it", "(Automated Releases)"],
+                    [
+                      "GitLab CI/CD",
+                      "(Continuous Integration/Continuous Deployment)",
+                    ],
+                    // ["Release-it", "(Automated Releases)"],
                   ].map((tool) => (
                     <li className="font-bold">
                       {tool[0]} <span className="font-normal">{tool[1]}</span>
@@ -573,13 +589,13 @@ const ProjectDetail3 = () => {
                   issues.
                 </p>
                 <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
-                  {[
-                    ["AWS CloudWatch", "(Monitoring & Logging Service)"],
-                  ].map((tool) => (
-                    <li className="font-bold">
-                      {tool[0]} <span className="font-normal">{tool[1]}</span>
-                    </li>
-                  ))}
+                  {[["AWS CloudWatch", "(Monitoring & Logging Service)"]].map(
+                    (tool) => (
+                      <li className="font-bold">
+                        {tool[0]} <span className="font-normal">{tool[1]}</span>
+                      </li>
+                    )
+                  )}
                 </ul>
               </div>
               <br />
@@ -595,10 +611,10 @@ const ProjectDetail3 = () => {
                 <ul className="text-muted-foreground flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                   {[
                     ["SonarCloud", "(Code quality & security scanning)"],
-                    ["Trivy", "(Container scanning)"],
-                    ["Grype", "(Vulnerability scanner)"],
-                    ["Syft", "(Generating Software Bill of Materials)"],
-                    ["OWASP ZAP", "(Web app security scanner)"],
+                    // ["Trivy", "(Container scanning)"],
+                    // ["Grype", "(Vulnerability scanner)"],
+                    // ["Syft", "(Generating Software Bill of Materials)"],
+                    // ["OWASP ZAP", "(Web app security scanner)"],
                     ["Gitleaks", "(Detecting hardcoded secrets)"],
                     ["Dependency Check", "(Scanning dependencies)"],
                   ].map((tool) => (
@@ -676,7 +692,7 @@ const ProjectDetail3 = () => {
             {/* ================================
           ======= Implementation Journey ====== 
           ====================================*/}
-            {/* <Card
+            <Card
               className="p-8 bg-card border-border animate-fade-in leading-relaxed"
               style={{ animationDelay: "0.4s" }}
               id="ImplementationJourney"
@@ -686,31 +702,140 @@ const ProjectDetail3 = () => {
               </h2>
               <div>
                 <h3 className="text-lg font-semibold mb-2">
-                  1.&nbsp;Infrastructure & Cluster Bootstrapping
+                  1.&nbsp;Setup Repository & Gitlab CI/CD
                 </h3>
                 <ul className="text-muted-foreground list-disc list-inside ml-6">
                   <li>
-                    Provisioned a baremetal Kubernetes cluster (Homelab)
-                    ensuring networking connectivity.
+                    Initialized a frontend repository using{" "}
+                    <span className="font-bold">Next.js</span> with TypeScript
+                    support.
                   </li>
                   <li>
-                    Configured <span className="font-bold">MetalLB</span> (Layer
-                    2 mode) to provide LoadBalancer IP addresses for the private
-                    network.
+                    Created a backend repository using{" "}
+                    <span className="font-bold">Express.js</span> with
+                    TypeScript.
                   </li>
                   <li>
-                    Installed the{" "}
-                    <span className="font-bold">NGINX Ingress Controller</span>{" "}
-                    to manage external access to services.
+                    Configured <span className="font-bold">ESLint</span> and{" "}
+                    <span className="font-bold">Prettier</span> for consistent
+                    code formatting and linting across both repositories.
+                  </li>
+                  <li>
+                    Set up <span className="font-bold">Husky</span> and{" "}
+                    <span className="font-bold">Lint-Staged</span> to enforce
+                    pre-commit hooks for linting and formatting.
+                  </li>
+                  <li>
+                    Established a branching strategy with protected branches for
+                    main and develop.
+                  </li>
+                  <li>
+                    Configured GitLab CI/CD pipelines for both repositories to
+                    automate testing, building, and deployment processes.
+                  </li>
+                  <li>
+                    Install Vitest for unit testing in both frontend and backend
+                    repositories.
                   </li>
                 </ul>
-                <img
-                  src={code}
-                  alt={code}
-                  className="mt-1 shadow-card max-w-2xl ml-6"
-                />
+
                 <br />
                 <h3 className="text-lg font-semibold mb-2">
+                  2.&nbsp;Frontend & Backend Development
+                </h3>
+                <ul className="text-muted-foreground list-disc list-inside ml-6">
+                  <li>
+                    Developed core features of the inventory management system,
+                    including product listing, stock tracking, supplier
+                    management.
+                  </li>
+                  <li>
+                    Implemented RESTful API endpoints in the Express.js backend
+                    to handle CRUD operations for inventory items and suppliers.
+                  </li>
+                  <li>
+                    Integrated frontend with backend APIs using Axios for data
+                    fetching and state management.
+                  </li>
+                  <li>
+                    Ensured responsive design and accessibility compliance using
+                    Tailwind CSS.
+                  </li>
+                </ul>
+                <br />
+                <h3 className="text-lg font-semibold mb-2">
+                  3.&nbsp;Database Design & Integration
+                </h3>
+                <ul className="text-muted-foreground list-disc list-inside ml-6">
+                  <li>
+                    Designed a relational database schema for PostgreSQL to
+                    efficiently store inventory data, supplier information, and
+                    transaction records.
+                  </li>
+                  <li>
+                    Implemented database connection and query logic in the
+                    Express.js backend using Prisma ORM.
+                  </li>
+                  <li>
+                    Set up AWS RDS instance for PostgreSQL with automated
+                    backups and high availability configurations.
+                  </li>
+                </ul>
+                <br />
+                <h3 className="text-lg font-semibold mb-2">
+                  4.&nbsp;Testing & Quality Assurance
+                </h3>
+                <ul className="text-muted-foreground list-disc list-inside ml-6">
+                  <li>
+                    Wrote unit tests for frontend components using Vitest to
+                    ensure individual functionalities work as expected.
+                  </li>
+                  <li>
+                    Developed end-to-end tests with Playwright to simulate user
+                    interactions and validate overall application workflows.
+                  </li>
+                  <li>
+                    Integrated SonarCloud into the CI/CD pipeline for continuous
+                    code quality and security analysis.
+                  </li>
+                </ul>
+                <br />
+                <h3 className="text-lg font-semibold mb-2">
+                  5.&nbsp;Deployment & Infrastructure Management
+                </h3>
+                <ul className="text-muted-foreground list-disc list-inside ml-6">
+                  <li>
+                    Used Terraform to provision AWS resources, including EC2,
+                    RDS, S3, and Amplify.
+                  </li>
+                  <li>
+                    Configured Ansible playbooks to automate the setup and
+                    deployment of the Express.js backend on the EC2 instance.
+                  </li>
+                  <li>
+                    Set up AWS Amplify to host and deploy the Next.js frontend
+                    application.
+                  </li>
+                </ul>
+                <br />
+                <h3 className="text-lg font-semibold mb-2">
+                  6.&nbsp;Security Enhancements
+                </h3>
+                <ul className="text-muted-foreground list-disc list-inside ml-6">
+                  {/* <li>
+                    Integrated Trivy and OWASP ZAP into the CI/CD pipeline for
+                    vulnerability scanning of code and dependencies.
+                  </li> */}
+                  <li>
+                    Implemented Gitleaks to detect and prevent hardcoded secrets
+                    in the codebase.
+                  </li>
+                  {/* <li>
+                    Generated Software Bill of Materials (SBOM) using Syft to
+                    enhance supply chain security.
+                  </li> */}
+                </ul>
+                {/* <h3 className="text-lg font-semibold mb-2">
                   2.&nbsp;Containerization (Docker)
                 </h3>
                 <ul className="text-muted-foreground list-disc list-inside ml-6">
@@ -849,9 +974,9 @@ const ProjectDetail3 = () => {
                     <span className="font-bold">"Golden Signals"
                     (Latency, Traffic, Errors, Saturation)</span>.
                   </li>
-                </ul>
+                </ul> */}
               </div>
-            </Card> */}
+            </Card>
             {/* ================================
           ======= Observability & Monitoring ====== 
           ====================================*/}
@@ -956,7 +1081,7 @@ const ProjectDetail3 = () => {
             {/* ================================
           ======= Security & DevSecOps ====== 
           ====================================*/}
-            {/* <Card
+            <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Security"
@@ -984,16 +1109,16 @@ const ProjectDetail3 = () => {
                       <span className="font-bold">Gitleaks</span> to prevent
                       hardcoded secrets/credentials from entering the codebase.
                     </li>
-                    <li>
+                    {/* <li>
                       <span className="font-bold">Runtime:</span> Kubernetes
-                      secrets are managed via GitOps using 
+                      secrets are managed via GitOps using
                       <span className="font-bold"> Sealed-Secrets</span>,
                       ensuring encryption at rest and safe storage in the git
                       repository.
-                    </li>
+                    </li> */}
                   </ul>
                 </li>
-                <li>
+                {/* <li>
                   <span className="font-bold">
                     Supply Chain Security (SCA & SBOM):{" "}
                   </span>
@@ -1008,8 +1133,8 @@ const ProjectDetail3 = () => {
                       <span className="font-bold">Dependency Check</span>.
                     </li>
                   </ul>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <span className="font-bold">
                     Container & Artifact Security:{" "}
                   </span>
@@ -1021,8 +1146,8 @@ const ProjectDetail3 = () => {
                       <span className="font-bold">Grype</span>.
                     </li>
                   </ul>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <span className="font-bold">
                     Dynamic Application Security Testing (DAST):{" "}
                   </span>
@@ -1033,52 +1158,65 @@ const ProjectDetail3 = () => {
                       catch runtime vulnerabilities.
                     </li>
                   </ul>
-                </li>
+                </li> */}
               </ul>
-            </Card> */}
+            </Card>
             {/* ================================
           ======= Challenges & Solutions ====== 
           ====================================*/}
-            {/* <Card
+            <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Challenges"
             >
-              <h2 className="text-2xl font-bold">
-                Challenges & Solutions
-              </h2>
+              <h2 className="text-2xl font-bold">Challenges & Solutions</h2>
               <ul className="text-muted-foreground leading-relaxed flex flex-col flex-wrap gap-1 align-items-center list-disc list-inside">
                 <ul className="flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                   <li>
                     <span className="font-bold">
-                      Challenge: The "Secret Zero" Problem in GitOps
+                      Pipeline slow due to node_modules reinstallation:
                     </span>
                     <ul className="list-disc list-inside ml-6">
                       <li>
-                        <span className="font-bold">The Issue:</span> Adopting a
-                        pure GitOps workflow meant that all configurations
-                        needed to be in the repository, but committing raw
-                        Kubernetes Secrets is a major security violation.
+                        <span className="font-bold">The Challenge:</span> Each
+                        CI pipeline run was taking an excessive amount of time
+                        because the entire <code>node_modules</code> directory
+                        had to be reinstalled from scratch.
                       </li>
                       <li>
-                        <span className="font-bold">The Solution:</span> I
-                        implemented{" "}
-                        <span className="font-bold">Sealed Secrets</span>{" "}
-                        (asymmetric encryption). This allows me to commit
-                        encrypted secrets to the public repository that can only
-                        be decrypted by the controller running inside the
-                        cluster, maintaining both security and the
-                        "Infrastructure as Code" philosophy.
+                        <span className="font-bold">The Solution:</span> By
+                        caching the <code>node_modules</code> directory between
+                        pipeline runs using GitLab CI's caching mechanism, we
+                        significantly reduced build times.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <span className="font-bold">
+                      Keeping Nodejs Server Restart when crashing:{" "}
+                    </span>
+                    <ul className="list-disc list-inside ml-6">
+                      <li>
+                        <span className="font-bold">The Challenge:</span> The
+                        Nodejs server would crash unexpectedly due to unhandled
+                        exceptions, leading to downtime.
+                      </li>
+                      <li>
+                        <span className="font-bold">The Solution:</span> By
+                        integrating <span className="font-bold">PM2</span> as a
+                        process manager, we ensured that the server would
+                        automatically restart upon crashes, maintaining high
+                        availability.
                       </li>
                     </ul>
                   </li>
                 </ul>
               </ul>
-            </Card> */}
+            </Card>
             {/* ================================
           ======= Results & Impact ====== 
           ====================================*/}
-            {/* <Card
+            <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Results"
@@ -1086,37 +1224,34 @@ const ProjectDetail3 = () => {
               <h2 className="text-2xl font-bold mb-4">Results & Impact</h2>
               <ul className="text-muted-foreground leading-relaxed flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                 <li>
-                  <span className="font-bold">Accelerated Delivery: </span>
-                  Migrated to a GitOps workflow with ArgoCD, reducing deployment
-                  lead time by <span className="font-bold">~50%</span> and
-                  completely eliminating configuration drift and manual errors.
+                  <span className="font-bold">Faster Deployments: </span>
+                  The optimized CI/CD pipeline reduced deployment times by over
+                  40%, enabling more frequent releases and quicker feature
+                  rollouts.
+                </li>
+                <li>
+                  <span className="font-bold">Improved Code Quality: </span>
+                  Continuous integration of SonarCloud led to a 30% reduction in
+                  code smells and vulnerabilities over six months.
                 </li>
                 <li>
                   <span className="font-bold">Enhanced Security Posture: </span>
-                  Achieved a "Zero Critical Vulnerabilities" baseline by
-                  integrating <span className="font-bold">Trivy</span> and{" "}
-                  <span className="font-bold">Syft</span> into the pipeline,
-                  blocking non-compliant artifacts before they reach production.
+                  Early detection of vulnerabilities through integrated SAST resulted in a 25% decrease in security incidents.
                 </li>
                 <li>
-                  <span className="font-bold">Proactive Observability:</span>
-                  Moved from passive monitoring to active alerting using
-                  <span className="font-bold">OpenTelemetry</span> and{" "}
-                  <span className="font-bold">Alertmanager</span>, reducing the
-                  Mean Time To Detect incidents by providing granular visibility
-                  into node and application health.
-                </li>
-                <li>
-                  <span className="font-bold">High Availability: </span>
-                  Architected a self-healing Kubernetes deployment strategy that
-                  maintains service availability during rolling updates.
+                  <span className="font-bold">
+                    Increased Developer Productivity:{" "}
+                  </span>
+                  Automated testing and deployment freed up developer time,
+                  allowing the team to focus more on feature development rather
+                  than manual processes.
                 </li>
               </ul>
-            </Card> */}
+            </Card>
             {/* ================================
           ======= Key Learnings ====== 
           ====================================*/}
-            {/* <Card
+            <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Key"
@@ -1124,6 +1259,49 @@ const ProjectDetail3 = () => {
               <h2 className="text-2xl font-bold mb-4">Key Learnings</h2>
               <ul className="text-muted-foreground leading-relaxed flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                 <li>
+                  <span className="font-bold">
+                    Caching in CI/CD Pipelines:{" "}
+                  </span>
+                  Avoiding caching the <code>node_modules</code> directory led
+                  to significantly longer build times. Implementing caching
+                  mechanisms can drastically speed up the pipeline by reusing
+                  previously downloaded dependencies.
+                </li>
+                <li>
+                  <span className="font-bold">
+                    Process Management for Node.js:{" "}
+                  </span>
+                  Using a process manager like{" "}
+                  <span className="font-bold">PM2</span> is essential for
+                  maintaining application uptime. It automatically restarts the
+                  server on crashes, ensuring high availability without manual
+                  intervention.
+                </li>
+                <li>
+                  <span className="font-bold">
+                    The Importance of Automated Testing:{" "}
+                  </span>
+                  Integrating unit and end-to-end tests into the CI/CD pipeline
+                  not only catches bugs early but also builds confidence in code
+                  changes, leading to more stable releases.
+                </li>
+                <li>
+                  <span className="font-bold">Security Integration: </span>
+                  Embedding security tools like SonarCloud into the development workflow ensures that security is a
+                  continuous concern rather than an afterthought, significantly
+                  reducing vulnerabilities.
+                </li>
+                <li>
+                  <span className="font-bold">
+                    Infrastructure as Code (IaC):{" "}
+                  </span>
+                  Using Terraform and Ansible for infrastructure provisioning
+                  and configuration management promotes consistency and
+                  repeatability, reducing human error and speeding up
+                  deployments.
+                </li>
+                
+                {/* <li>
                   <span className="font-bold">
                     The Power of Immutable Infrastructure:{" "}
                   </span>
@@ -1148,13 +1326,13 @@ const ProjectDetail3 = () => {
                   enough. True observability (via OpenTelemetry) is required to
                   understand why a system is behaving a certain way, not just
                   that it is failing.
-                </li>
+                </li> */}
               </ul>
-            </Card> */}
+            </Card>
             {/* ================================
           ======= Future Improvements ====== 
           ====================================*/}
-            {/* <Card
+            <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="Future"
@@ -1162,31 +1340,42 @@ const ProjectDetail3 = () => {
               <h2 className="text-2xl font-bold mb-4">Future Improvements:</h2>
               <ul className="text-muted-foreground leading-relaxed flex flex-col flex-wrap gap-1 align-items-center mt-5 list-disc list-inside">
                 <li>
-                  <span className="font-bold">Chaos Engineering: </span>
-                  Integrating tools like Trivy and SonarCloud taught me that
-                  security cannot be an afterthought. Automated gates in the
-                  pipeline are far more effective than manual audits at the end
-                  of a release cycle.
-                </li>
-                <li>
-                  Refactoring the baremetal provisioning layer with{" "}
-                  <span className="font-bold">Ansible</span> for full
-                  infrastructure automation.
-                </li>
-                <li>
-                  Implementing{" "}
                   <span className="font-bold">
-                    Service Level Objectives (SLOs)
+                    Dockerizing the application:
                   </span>{" "}
-                  and Error Budgets within Grafana to move towards SRE-based
-                  alerting.
+                  Create Dockerfiles for both frontend and backend services to
+                  enable containerized deployments.
+                </li>
+                <li>
+                  <span className="font-bold">
+                    Moving Backend to AWS Lamda:
+                  </span>{" "}
+                  Migrate the Express.js backend to AWS Lambda functions for a
+                  serverless architecture.
+                </li>
+                <li>
+                  <span className="font-bold">Refactoring Terraform code:</span>{" "}
+                  Modularize the Terraform configurations for better
+                  maintainability and reusability.
+                </li>
+                <li>
+                  <span className="font-bold">Refactoring Ansible playbooks:</span>{" "}
+                  Organize playbooks into roles and improve readability.
+                </li>
+                <li>
+                  <span className="font-bold">
+                    Enhancing Security Measures:
+                  </span>{" "}
+                  Integrate additional security tools like OWASP ZAP for dynamic
+                  application security testing (DAST) and implement runtime
+                  security monitoring.
                 </li>
               </ul>
-            </Card> */}
+            </Card>
             {/* ================================
           ======= Getting Started & Installation  ====== 
           ====================================*/}
-            {/* <Card
+            <Card
               className="p-8 bg-card border-border animate-fade-in"
               style={{ animationDelay: "0.5s" }}
               id="installation"
@@ -1196,67 +1385,111 @@ const ProjectDetail3 = () => {
               </h2>
               <div>
                 <p className="text-muted-foreground">
-                  Since this project utilizes Sealed Secrets for GitOps
-                  security, the configuration files in this repository are
-                  encrypted for my specific cluster controller. However, you can
-                  replicate the deployment using the steps below.
+                  To get a local copy up and running, follow these steps:
                 </p>
                 <br />
+                <h3 className="text-lg font-semibold mb-2">Frontend</h3>
                 <p className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
                   git clone
-                  https://gitlab.com/cheulong-devops/movies-finder/new-movies-finder-frontend.git
+                  https://gitlab.com/cheulong-devops/inventory-management-dashboard/inventory-management-dashboard-frontend.git
                 </p>
                 <br />
-                <h3 className="text-lg font-semibold mb-2">
-                  Environment Configuration
-                </h3>
-                <p className="text-muted-foreground">You will need a TMDB API Key to fetch movie data.</p>
+
+                <p className="text-muted-foreground">Create .env.local</p>
                 <br />
                 <div className="block">
                   <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
                     <code className="language-javascript">
-                      <span className="text-gray-500"># For Bash</span>
-                      <br />
-                      export VITE_TMDB_API_KEY=12345...
-                      <br />
-                      docker compose -f compose.prod.yml up --build -d
+                      NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
                     </code>
                   </pre>
                 </div>
                 <br />
-                <p className="leading-relaxed text-muted-foreground">Clean up</p>
+                <p className="text-muted-foreground">Install npm packages</p>
+                <br />
                 <div className="block">
                   <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
-                    <code className="language-javascript">
-                      docker compose -f compose.prod.yml down --rmi all
-                    </code>
+                    <code className="language-javascript">npm install</code>
                   </pre>
                 </div>
                 <br />
-                <h3 className="text-lg font-semibold mb-2">Running Tests</h3>
                 <p className="text-muted-foreground">
-                  The CI pipeline automatically runs these, but you can trigger
-                  them manually:
+                  Start the Nextjs web app
                 </p>
                 <br />
                 <div className="block">
                   <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
+                    <code className="language-javascript">npm run dev</code>
+                  </pre>
+                </div>
+                <br />
+                <h3 className="text-lg font-semibold mb-2">Backend</h3>
+                <div className="block">
+                  <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
                     <code className="language-javascript">
-                      npm run test{" "}
-                      <span className="text-gray-500"># Runs Vitest</span>
-                      <br />
-                      npm run playwright{" "}
-                      <span className="text-gray-500"># Runs Playwright</span>
-                      <br />
-                      npm run scan:trivy:fs{" "}
-                      <span className="text-gray-500">
-                        # Runs Trivy filesystem scan
-                      </span>
+                      git clone
+                      https://gitlab.com/cheulong-devops/inventory-management-dashboard/inventory-management-dashboard-backend.git
                     </code>
                   </pre>
                 </div>
+                <br />
+                <p className="text-muted-foreground">Install npm packages</p>
+                <br />
+                <div className="block">
+                  <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
+                    <code className="language-javascript">npm install</code>
+                  </pre>
+                </div>
+                <br />
+                
+                <p className="leading-relaxed text-muted-foreground">
+                  Create database name "inventorymanagement"
+                </p>
+                <p className="text-muted-foreground">Create .env</p>
+                <br />
+                <div className="block">
+                  <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
+                    <code className="language-javascript">
+                      PORT=8000
+                      <br />
+                      DATABASE_URL="postgresql://username:password@localhost:5432/inventorymanagement?schema=public"
+                    </code>
+                  </pre>
+                </div>
+                <br />
+                <p className="leading-relaxed text-muted-foreground">
+                  Create tables in the database using Prisma Migrate
+                </p>
+                <div className="block">
+                  <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
+                    <code className="language-javascript">
+                      npx prisma@5 migrate dev --name init
+                    </code>
+                  </pre>
+                </div>
+                <br />
+                <p className="leading-relaxed text-muted-foreground">
+                  Seed the database with initial data
+                </p>
+                <div className="block">
+                  <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
+                    <code className="language-javascript">
+                      npm run seed
+                    </code>
+                  </pre>
+                </div>
+                <br />
+                <p className="leading-relaxed text-muted-foreground">
+                  Start the Expressjs backend server
+                </p>
+                <div className="block">
+                  <pre className="bg-gray-900 text-white p-4 rounded-md overflow-x-auto">
+                    <code className="language-javascript">npm run dev</code>
+                  </pre>
+                </div>
+                <br />
               </div>
-            </Card> */}
+            </Card>
           </div>
         </div>
       </div>

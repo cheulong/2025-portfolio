@@ -31,28 +31,29 @@ const Projects = () => {
         "helm",
       ],
     },
-    {
-      id: "monitoring-microservices-ecommerce-app",
-      title:
-        "Monitoring Microservices 3-tier e-commerce app on EKS with GitOps",
-      description:
-        "E-commerce app is a microservices-based web application that allows users to browse and purchase products online. The app is built using React.js for the frontend, Node.js with Express for the backend, and MongoDB for data storage. The deployment is automated using a GitOps approach with ArgoCD and Helm on AWS EKS. The monitoring stack includes Prometheus, Grafana, and Loki for comprehensive observability.",
-      thumbnail: image2_1,
-      tags: [
-        "argocd",
-        "kubernetes",
-        "docker",
-        "gitlab ci/cd",
-        "prometheus",
-        "grafana",
-        "monitoring",
-        "homelab",
-        "ingress",
-        "helm",
-        "postgresql",
-        "mongodb",
-      ],
-    },
+    // {
+    //   id: "monitoring-microservices-ecommerce-app",
+    //   title:
+    //     "Monitoring Microservices 3-tier e-commerce app on EKS with GitOps",
+    //   description:
+    //     "E-commerce app is a microservices-based web application that allows users to browse and purchase products online. The app is built using React.js for the frontend, Node.js with Express for the backend, and MongoDB for data storage. The deployment is automated using a GitOps approach with ArgoCD and Helm on AWS EKS. The monitoring stack includes Prometheus, Grafana, and Loki for comprehensive observability.",
+    //   thumbnail: image2_1,
+    //   tags: [
+    //     "argocd",
+    //     "kubernetes",
+    //     "docker",
+    //     "gitlab ci/cd",
+    //     "prometheus",
+    //     "grafana",
+    //     "monitoring",
+    //     "homelab",
+    //     "ingress",
+    //     "helm",
+    //     "postgresql",
+    //     "mongodb",
+    //     "turborepo"
+    //   ],
+    // },
     {
       id: "nextjs-inventory-management-dashboard-aws",
       title: "Nextjs Inventory Management Dashboard & Deploy on AWS",
@@ -215,6 +216,7 @@ const Projects = () => {
         "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
       mongodb:
         "bg-green-600/20 text-green-700 dark:text-green-300 border-green-600/30",
+      turborepo: "bg-red-600/20 text-red-700 dark:text-red-300 border-red-600/30"
     };
 
     return (
