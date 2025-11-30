@@ -51,32 +51,33 @@ const Projects = () => {
     //     "helm",
     //     "postgresql",
     //     "mongodb",
+    //     "turborepo"
     //   ],
     // },
-    // {
-    //   id: "nextjs-inventory-management-dashboard-aws",
-    //   title: "Nextjs Inventory Management Dashboard & Deploy on AWS",
-    //   description:
-    //     "Inventory Management Dashboard is a web application that helps businesses manage their inventory levels, orders, and suppliers. The app is built using Next.js for the frontend, Node.js with Express for the backend, and Postgres for data storage. The deployment leverages various AWS services to ensure scalability, reliability, and security.",
-    //   thumbnail: image3_1,
-    //   tags: [
-    //     "NextJs",
-    //     "Vitest",
-    //     "Playwright",
-    //     "Express",
-    //     "TypeScript",
-    //     "Gitlab ci/cd",
-    //     "Postgres",
-    //     "NodeJs",
-    //     "Tailwind",
-    //     "EC2",
-    //     "RDS",
-    //     "S3",
-    //     "AWS",
-    //     "Terraform",
-    //     "Ansible",
-    //   ],
-    // },
+    {
+      id: "nextjs-inventory-management-dashboard-aws",
+      title: "Nextjs Inventory Management Dashboard & Deploy on AWS",
+      description:
+        "Inventory Management Dashboard is a web application that helps businesses manage their inventory levels, orders, and suppliers. The app is built using Next.js for the frontend, Node.js with Express for the backend, and Postgres for data storage. The deployment leverages various AWS services to ensure scalability, reliability, and security.",
+      thumbnail: image3_1,
+      tags: [
+        "NextJs",
+        "Vitest",
+        "Playwright",
+        "Express",
+        "TypeScript",
+        "Gitlab ci/cd",
+        "Postgres",
+        "NodeJs",
+        "Tailwind",
+        "EC2",
+        "RDS",
+        "S3",
+        "AWS",
+        "Terraform",
+        "Ansible",
+      ],
+    },
     // {
     //   id: "deploying-3-tier-project-management-aws-services",
     //   title: "Build a Nextjs Project Management App & Deploy on AWS",
@@ -215,6 +216,7 @@ const Projects = () => {
         "bg-sky-600/20 text-sky-700 dark:text-sky-300 border-sky-600/30",
       mongodb:
         "bg-green-600/20 text-green-700 dark:text-green-300 border-green-600/30",
+      turborepo: "bg-red-600/20 text-red-700 dark:text-red-300 border-red-600/30"
     };
 
     return (
