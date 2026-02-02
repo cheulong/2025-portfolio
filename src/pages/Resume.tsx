@@ -20,7 +20,7 @@ const Resume = () => {
       <div className="container mx-auto px-6 py-6 max-w-5xl flex justify-end">
         <Button className="text-white bg-blue-500  hover:shadow-glow transition-all">
           <a
-            href="https://drive.google.com/uc?export=download&id=1QoonGZBQiIYtoTEz6sUcLZMWGXomJhM6"
+            href="https://drive.google.com/uc?export=download&id=1gAQ-DnSiDB7iuTst6BZ1K6ncRSLDKqjl"
             download
             className="flex items-center gap-2"
           >
@@ -484,7 +484,7 @@ const Resume = () => {
               >
                 dev.to
               </a>
-              &nbsp;(3300+ reads)
+              &nbsp;(6500+ reads)
             </p>
           </CardContent>
         </Card>

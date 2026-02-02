@@ -23,6 +23,9 @@ import proxmoxEmuImg from "@/assets/blogs/proxmoxEmu-port.png";
 import proxMoxIpImg from "@/assets/blogs/proxmoxIp-port.png";
 import certManagerImg from "@/assets/blogs/cert-manager-port.png";
 import slackImg from "@/assets/blogs/slack-port.png";
+import justImg from "@/assets/blogs/just-port.png";
+import k3sImg from "@/assets/blogs/k3s-port.png";
+import grpcImg from "@/assets/blogs/grpc-port.png";
 
 const Blog = () => {
   const [selectedTag, setSelectedTag] = useState("all");
@@ -80,6 +83,30 @@ const Blog = () => {
   };
 
   const blogPosts = [
+    {
+      title: "Setting up gRPC API in Node.js",
+      description:
+        "This article will show you how to set up gRPC API in Node.js. By following these steps, you can easily set up gRPC API in Node.js to run your containerized applications.",
+      tags: ["grpc", "nodejs", "api", "backend", "microservices", "devops"],
+      image: grpcImg,
+      link: "https://dev.to/cheulong/your-first-grpc-api-in-nodejs-1nke",
+    },
+        {
+      title: "How to set up k3s on Ubuntu server",
+      description:
+        "This article will show you how to set up k3s on Ubuntu server. By following these steps, you can easily set up k3s on your Ubuntu server to run your containerized applications.",
+      tags: ["kubernetes", "ubuntu", "k3s", "homelab"],
+      image: k3sImg,
+      link: "https://dev.to/cheulong/how-to-set-up-k3s-on-ubuntu-server-173h",
+    },
+        {
+      title: "Justfile make your life easier",
+      description:
+        "Justfile is a simple and powerful tool that can help you automate your daily tasks. It is a command-line tool that can be used to run commands in a consistent and repeatable way.",
+      tags: ["justfile", "ubuntu", "devops", "cli"],
+      image: justImg,
+      link: "https://dev.to/cheulong/justfile-make-your-life-easier-n8f",
+    },
     {
       title: "How to set up Slack notifications from GitLab CI/CD using the Slack API",
       description:
