@@ -27,12 +27,12 @@ const Contact = () => {
       href: "https://dev.to/cheulong",
       display: "dev.to/cheulong",
     },
-    {
-      icon: Youtube,
-      label: "youtube",
-      href: "https://youtube.com/@moshi-moshi-devops",
-      display: "youtube.com/@moshi-moshi-devops",
-    },
+    // {
+    //   icon: Youtube,
+    //   label: "youtube",
+    //   href: "https://youtube.com/@moshi-moshi-devops",
+    //   display: "youtube.com/@moshi-moshi-devops",
+    // },
   ];
 
   return (

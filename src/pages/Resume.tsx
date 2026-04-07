@@ -20,7 +20,7 @@ const Resume = () => {
       <div className="container mx-auto px-6 py-6 max-w-5xl flex justify-end">
         <Button className="text-white bg-blue-500  hover:shadow-glow transition-all">
           <a
-            href="https://drive.google.com/uc?export=download&id=1gAQ-DnSiDB7iuTst6BZ1K6ncRSLDKqjl"
+            href="https://drive.google.com/uc?export=download&id=1igp11gr1inyt0cVLt_ngCRQNiQaxfwQb"
             download
             className="flex items-center gap-2"
           >
@@ -73,13 +73,13 @@ const Resume = () => {
                 github.com/cheulong
               </a>
               <a
-                href="https://cheulongsear.dev"
+                href="https://cheulong.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-primary transition-colors"
               >
                 <Globe size={16} />
-                cheulongsear.dev
+                cheulong.dev
               </a>
             </div>
           </div>

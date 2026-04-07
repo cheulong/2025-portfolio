@@ -10,7 +10,7 @@ const Work = () => {
     {
       logo: alstomLogo,
       company: "Alstom",
-      role: "Frontend Developer",
+      role: "Software Engineer",
       period: "Jan 2024 - Present",
       description:
         "I develop the internal application for the Alstom company to improve the flow of working and to make the work easier for the employees.",
